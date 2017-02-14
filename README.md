@@ -19,7 +19,7 @@ This program is an in-progress hotel reservation system. It allows for the creat
 - Reservation is assigned to User
 - Rooms are made unavailable for those dates.
 
-### Future To-Dos:
+## Future To-Dos:
 
 - [ ] Add Associate Role – mid-level restricted permission role for general employees.
 - [ ] Add ability for user to view a placed reservation.
@@ -37,7 +37,7 @@ This program is an in-progress hotel reservation system. It allows for the creat
 - [ ] Allow user to reserve multiple rooms with more than one date range per reservation.
 - [ ] Implement tables not yet implemented.
 
-### Database Table Explanation 
+## Database Table Explanation 
 
 - LOOKUPRole: Stores the available roles in the system.
 - SYSGuestTable: Not yet implemented. Will store guests that are not registered users. May not be necessary depending on requirements.
@@ -51,6 +51,6 @@ This program is an in-progress hotel reservation system. It allows for the creat
 - SYSUserProfile: Stores individual user information such as name, phone number, notes about the user, etc
 - SYSUserRole: Stores the user role, and whether the user is currently active.
 
-### Notes
+## Notes
 
 Big hat-tip to user Vincent Durano for the base account creation code which has been modified here for this project.

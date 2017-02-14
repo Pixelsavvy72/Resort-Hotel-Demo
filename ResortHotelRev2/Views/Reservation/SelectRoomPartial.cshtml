@@ -1,0 +1,64 @@
+﻿@model ResortHotelRev2.Models.ViewModel.RoomDataView
+
+
+
+<div>
+    <h1>Available Rooms from @ViewBag.startDateToPartial to @ViewBag.endDateToPartial.</h1>
+    <h3>Please select the room(s) you wish to reserve for this time period.</h3><br />
+    
+    @*input submit button rather than ActionLink needed for form.*@    
+    <input type="submit" name="VerifyReservationInfo" value="Verify Reservation Information" class="btn btn-primary btn-large" />
+    
+    @using (Html.BeginForm("VerifyReservationInfo", "Reservation", FormMethod.Post))
+    {  
+        @Html.AntiForgeryToken()  
+        
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Style</th>
+                    <th>Occupancy</th>
+                    <th>King Beds</th>
+                    <th>Queen Beds</th>
+                    <th>Smoking</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                @* Display rooms in a table and send information for use
+                    in VerifyReservationInfo controller. *@
+                @for (int i = 0; i < Model.RoomProfile.Count; i++)
+
+                {
+                    
+                    <tr>
+                        <td>@Html.CheckBoxFor(r => r.RoomProfile[i].IsSelected, new { @class = "checkbox" })</td>
+                        <td><img src="~/Content/images/RoomPics/@Html.DisplayFor(r => r.RoomProfile[i].Image)" width="175" height="120" /></td>                        
+                        <td>@Html.DisplayFor(r => r.RoomProfile[i].RoomType)</td>                        
+                        <td>@Html.DisplayFor(r => r.RoomProfile[i].Occupancy)</td>                        
+                        <td>@Html.DisplayFor(r => r.RoomProfile[i].KingBeds)</td>                        
+                        <td>@Html.DisplayFor(r => r.RoomProfile[i].QueenBeds)</td>                        
+                        <td>@Html.DisplayFor(r => r.RoomProfile[i].Smoking)</td>                        
+                        <td>@Html.DisplayFor(r => r.RoomProfile[i].RoomDescription)</td>
+
+                        <td>@Html.HiddenFor(r => r.RoomProfile[i].RoomDescription)</td>
+                        <td>@Html.HiddenFor(r => r.RoomProfile[i].RoomId)</td> 
+                        <td>@Html.HiddenFor(r => r.RoomProfile[i].RoomType)</td>
+                        <td>@Html.HiddenFor(r => r.RoomProfile[i].Occupancy)</td>
+                        <td>@Html.HiddenFor(r => r.RoomProfile[i].KingBeds)</td>
+                        <td>@Html.HiddenFor(r => r.RoomProfile[i].QueenBeds)</td>
+                        <td>@Html.HiddenFor(r => r.RoomProfile[i].Smoking)</td>
+                        <td>@Html.HiddenFor(r => r.RoomProfile[i].CheckIn)</td>
+                        <td>@Html.HiddenFor(r => r.RoomProfile[i].CheckOut)</td>
+                                              
+                        
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>  
+    }
+</div>

@@ -1,0 +1,116 @@
+﻿@model ResortHotelRev2.Models.ViewModel.ReservationView
+
+@{
+    ViewBag.Title = "Reservation";
+}
+
+@*jQuery UI CSS Reference*@
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+@*Required moment js*@
+<script src="~/Scripts/moment-with-locales.min.js"></script>
+
+@*Validation Script*@
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+
+
+@*Wire up DatePickers*@
+<script type="text/javascript">
+    $(function () {
+        $('.date-picker').datepicker();
+    })
+
+    $(function () {
+        $('[data-toggle = "tooltip"]').tooltip()
+    })
+
+
+
+</script>
+
+
+
+<h2>Reservation</h2>
+
+
+<!--TODO: After date is chosen from the datepicker, display should be formatted.-->
+
+@using (Html.BeginForm("VerifyReservationInfo", "Reservation", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.MadeBy, "Made By:", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">                
+                @Html.HiddenFor(model => model.MadeBy, new { @Value = "Online", @readonly = true })
+                @Html.ValidationMessageFor(model => model.MadeBy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CheckIn, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBox("Starting Date:", "", new { @class = "date-picker form-control", id = "startDate", placeholder = "month / day / year" })
+            @Html.ValidationMessageFor(model => model.CheckIn, "", new { @class = "text-danger" })
+            @*<span id="error"></span>*@
+            
+            <br />
+            @Html.LabelFor(model => model.CheckOut, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBox("Ending Date:", "", new { @class = "date-picker form-control", id = "endDate", placeholder = "month / day / year" })
+            @Html.ValidationMessageFor(model => model.CheckOut, "", new { @class = "text-danger" })
+            <br />
+
+
+
+            <a href="#" id="calendarSubmitButton" class="btn btn-primary">Search For Available Rooms</a>
+        </div>
+
+    </div>
+
+            
+    <div id="divRoomListContainer">           
+        
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to Main", "Index", "Home")
+    </div>
+
+
+}  @*end BeginForm*@
+
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            
+            $('#calendarSubmitButton').click(function () {
+                var selectedStartDate = $('#startDate').datepicker('getDate');
+                var startDateToController = $("#startDate").val($.datepicker.formatDate('mm/dd/yy', new Date($('#startDate').datepicker('getDate'))));
+                var endDateToController = $("#endDate").val($.datepicker.formatDate('mm/dd/yy', new Date($('#endDate').datepicker('getDate'))));
+                var today = new Date();
+                today.setHours(0, 0, 0, 0);
+                if (startDateToController.val() > endDateToController.val()) {
+                    $("#divRoomListContainer").empty();
+                    confirm("Check-in must be before check-out.");
+                }
+                else if (selectedStartDate < today) {
+                    $("#divRoomListContainer").empty();
+                    confirm("Check-in date must not have already passed.");
+                }
+                else {
+                    $("#divRoomListContainer").load('@Url.Action("SelectRoomPartial", "Reservation")?startDate=' + startDateToController.val() + '&endDate=' + endDateToController.val());
+                }
+                
+            });
+
+
+        });
+
+
+    </script>

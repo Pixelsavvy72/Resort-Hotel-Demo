@@ -4,7 +4,7 @@ This program is an in-progress hotel reservation system. It allows for the creat
 
 ## Current Functionality
 
-** Account Management **
+**Account Management**
 - Create new user: User or Admin created account
 - Login/ Logout out of accounts.
 - Edit user profile information: Available to users after login, or admins from the Admin Control Panel. 
@@ -12,7 +12,7 @@ This program is an in-progress hotel reservation system. It allows for the creat
 - Assign roles (member / admin) to accounts.
 - Search from within Admin Control Panel. Display all users, Search by last name, search by User Id.
 
-**  Reservations **
+**Reservations**
 - Search for available rooms by date range using dual JavaScript calendars.
 - Select room or rooms to reserve and add to reservation.
 - Persist reservation and related data to various database tables (see below).

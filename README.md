@@ -53,4 +53,4 @@ This program is an in-progress hotel reservation system. It allows for the creat
 
 ## Notes
 
-Big hat-tip to user Vincent Durano for the base account creation code which has been modified here for this project.
+Big hat-tip to user Vincent Durano for his information and examples on account creation.

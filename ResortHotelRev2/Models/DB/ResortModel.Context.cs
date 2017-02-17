@@ -33,7 +33,7 @@ namespace ResortHotelRev2.Models.DB
         public virtual DbSet<SYSOccupiedRoomTable> SYSOccupiedRoomTables { get; set; }
         public virtual DbSet<SYSGuestToRoomTable> SYSGuestToRoomTables { get; set; }
         public virtual DbSet<SYSUser> SYSUsers { get; set; }
-        public virtual DbSet<SYSUserProfile> SYSUserProfiles { get; set; }
         public virtual DbSet<SYSGuestTable> SYSGuestTables { get; set; }
+        public virtual DbSet<SYSUserProfile> SYSUserProfiles { get; set; }
     }
 }

@@ -19,10 +19,10 @@
         <AssociationConnector Association="ResortDBModel.FK__SYSGuestT__Occup__70DDC3D8" />
         <EntityTypeShape EntityType="ResortDBModel.SYSUser" Width="1.5" PointX="3.75" PointY="4.625" />
         <AssociationConnector Association="ResortDBModel.FK__SYSUserRo__SYSUs__4316F928" />
-        <EntityTypeShape EntityType="ResortDBModel.SYSUserProfile" Width="1.5" PointX="6" PointY="8.375" />
-        <AssociationConnector Association="ResortDBModel.FK__SYSUserPr__SYSUs__2B0A656D" />
         <EntityTypeShape EntityType="ResortDBModel.SYSGuestTable" Width="1.5" PointX="6.75" PointY="0.875" />
         <AssociationConnector Association="ResortDBModel.FK__SYSGuestT__Guest__6FE99F9F" />
+        <EntityTypeShape EntityType="ResortDBModel.SYSUserProfile" Width="1.5" PointX="6" PointY="8.25" />
+        <AssociationConnector Association="ResortDBModel.FK__SYSUserPr__SYSUs__2B0A656D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

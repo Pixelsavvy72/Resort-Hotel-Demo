@@ -101,6 +101,7 @@
     <Property Name="PhoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="MemberSince" Type="date" />
     <Property Name="UserNotes" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="SYSUserRole">
     <Key>

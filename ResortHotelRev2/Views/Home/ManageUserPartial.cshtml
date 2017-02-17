@@ -11,6 +11,8 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Phone</th>
+                <th>E-mail</th>
+                <th>Guest Notes</th>
                 <th colspan="2">Role</th>
                 <th></th>
                 <th></th>
@@ -26,7 +28,9 @@
                     <td> @Html.DisplayFor(m => i.FirstName)</td>
                     <td> @Html.DisplayFor(m => i.LastName)</td>
                     <td> @Html.DisplayFor(m => i.PhoneNumber)</td>
-                    <td> @Html.DisplayFor(m => i.RoleName)</td>
+                    <td> @Html.DisplayFor(m => i.Email)</td>
+                    <td> @Html.DisplayFor(m => i.UserNotes)</td>
+                    <td> @Html.DisplayFor(m => i.RoleName)</td>                    
                     <td> @Html.HiddenFor(m => i.LOOKUPRoleID)</td>
                     <td><a href="javascript:void(0)" class="lnkEdit">Edit</a></td>
                     <td><a href="javascript:void(0)" class="lnkDelete">Delete</a></td>
@@ -62,6 +66,10 @@
             <td><input type="text" id="txtPhone" class="form-control" /> </td>
         </tr>
         <tr>
+            <td>E-mail</td>
+            <td><input type="text" id="txtEmail" class="form-control" /> </td>
+        </tr>          
+        <tr>
             <td>Role</td>
             <td>
                 @Html.DropDownListFor(o => o.UserRoles.SelectedRoleID,
@@ -70,6 +78,11 @@
                            new { id = "ddlRoles", @class = "form-control" })
             </td>
         </tr>
+        <tr>
+            <td>Guest Notes</td>
+            <td><textarea rows="7" cols="50" type="text" id="txtUserNotes" class="form-control" /> </td>
+        </tr>
+
     </table>
 </div>  
 
@@ -93,8 +106,10 @@
                         var fName = $("#txtFirstName").val();
                         var lName = $("#txtLastName").val();
                         var phone = $("#txtPhone").val();
+                        var email = $("#txtEmail").val();
+                        var userNotes = $("#txtUserNotes").val();
 
-                        UpdateUser(id, loginName, loginPass, fName, lName, phone, role);
+                        UpdateUser(id, loginName, loginPass, fName, lName, phone, email, userNotes, role);
                         $(this).dialog("destroy");
                     },
                     Cancel: function () { $(this).dialog("destroy"); }
@@ -102,11 +117,11 @@
             });
         }
 
-        function UpdateUser(id, logName, logPass, fName, lName, phone, role) {
+        function UpdateUser(id, logName, logPass, fName, lName, phone, email, userNotes, role) {
             $.ajax({
                 type: "POST",
                 url: "@(Url.Action("UpdateUserData","Home"))",
-                data: { userID: id, loginName: logName, password: logPass, firstName: fName, lastName: lName, phone: phone, roleID: role },
+                data: { userID: id, loginName: logName, password: logPass, firstName: fName, lastName: lName, phone: phone, email: email, userNotes: userNotes, roleID: role },
                 success: function (data) {
                     $("#divUserListContainer").load("@(Url.Action("ManageUserPartial","Home", new { status ="update" }))");
                 },
@@ -127,7 +142,9 @@
             $("#txtFirstName").val(row.find("td:eq(3)").html().trim())
             $("#txtLastName").val(row.find("td:eq(4)").html().trim())
             $("#txtPhone").val(row.find("td:eq(5)").html().trim())
-            $("#ddlRoles").val(row.find("td:eq(7) > input").val().trim());
+            $("#txtEmail").val(row.find("td:eq(6)").html().trim().replace(/<(?:.|\n)*?>/gm, ''));
+            $("#txtUserNotes").val(row.find("td:eq(7)").html().trim())
+            $("#ddlRoles").val(row.find("td:eq(9) > input").val().trim());
 
             $("#divEdit").dialog("open");
             return false;

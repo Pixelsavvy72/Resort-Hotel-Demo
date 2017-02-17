@@ -99,9 +99,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="SYSGuestTables">
+      <EntityTypeMapping TypeName="ResortDBModel.SYSGuestTable">
+        <MappingFragment StoreEntitySet="SYSGuestTable">
+          <ScalarProperty Name="IsMember" ColumnName="IsMember" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="SYSUserProfiles">
       <EntityTypeMapping TypeName="ResortDBModel.SYSUserProfile">
         <MappingFragment StoreEntitySet="SYSUserProfile">
+          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="UserNotes" ColumnName="UserNotes" />
           <ScalarProperty Name="MemberSince" ColumnName="MemberSince" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
@@ -113,16 +124,6 @@
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="SYSUserID" ColumnName="SYSUserID" />
           <ScalarProperty Name="SYSUserProfileID" ColumnName="SYSUserProfileID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SYSGuestTables">
-      <EntityTypeMapping TypeName="ResortDBModel.SYSGuestTable">
-        <MappingFragment StoreEntitySet="SYSGuestTable">
-          <ScalarProperty Name="IsMember" ColumnName="IsMember" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

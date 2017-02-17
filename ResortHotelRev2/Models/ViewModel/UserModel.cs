@@ -32,6 +32,7 @@ namespace ResortHotelRev2.Models.ViewModel
         [Display(Name = "Phone Number")]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
+        public string Email { get; set; }
     }
     public class UserLoginView
     {
@@ -70,6 +71,8 @@ namespace ResortHotelRev2.Models.ViewModel
         [Display(Name = "Phone Number")]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
         public string UserNotes { get; set; }
     }
 

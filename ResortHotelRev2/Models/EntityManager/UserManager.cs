@@ -31,6 +31,7 @@ namespace ResortHotelRev2.Models.EntityManager
                 sysUserProfile.FirstName = user.FirstName;
                 sysUserProfile.LastName = user.LastName;
                 sysUserProfile.PhoneNumber = user.PhoneNumber;
+                sysUserProfile.Email = user.Email;
                 sysUserProfile.RowCreatedSYSUserID = user.SYSUserID > 0 ? user.SYSUserID : 1;
                 sysUserProfile.RowModifiedSYSUserID = user.SYSUserID > 0 ? user.SYSUserID : 1;
                 sysUserProfile.RowCreatedDateTime = DateTime.Now;
@@ -138,12 +139,14 @@ namespace ResortHotelRev2.Models.EntityManager
                     userProfileView.LoginName = u.LoginName;
                     userProfileView.Password = u.PasswordEncryptedText;
 
-                    var SUP = db.SYSUserProfiles.Find(u.SYSUserID);
-                    if (SUP != null)
+                    var systemUserProfile = db.SYSUserProfiles.Find(u.SYSUserID);
+                    if (systemUserProfile != null)
                     {
-                        userProfileView.FirstName = SUP.FirstName;
-                        userProfileView.LastName = SUP.LastName;
-                        userProfileView.PhoneNumber = SUP.PhoneNumber;
+                        userProfileView.FirstName = systemUserProfile.FirstName;
+                        userProfileView.LastName = systemUserProfile.LastName;
+                        userProfileView.PhoneNumber = systemUserProfile.PhoneNumber;
+                        userProfileView.Email = systemUserProfile.Email;
+                        userProfileView.UserNotes = systemUserProfile.UserNotes;
                     }
 
                     var SUR = db.SYSUserRoles.Where(o => o.SYSUserID.Equals(u.SYSUserID));
@@ -199,6 +202,8 @@ namespace ResortHotelRev2.Models.EntityManager
                         userProfileView.FirstName = sysUserProfile.FirstName;
                         userProfileView.LastName = sysUserProfile.LastName;
                         userProfileView.PhoneNumber = sysUserProfile.PhoneNumber;
+                        userProfileView.Email = sysUserProfile.Email;
+                        userProfileView.UserNotes = sysUserProfile.UserNotes;
                     }
 
                     var SUR = db.SYSUserRoles.Find(userID);
@@ -241,6 +246,8 @@ namespace ResortHotelRev2.Models.EntityManager
                             sysUserProfile.FirstName = user.FirstName;
                             sysUserProfile.LastName = user.LastName;
                             sysUserProfile.PhoneNumber = user.PhoneNumber;
+                            sysUserProfile.Email = user.Email;
+                            sysUserProfile.UserNotes = user.UserNotes;
                             sysUserProfile.RowCreatedSYSUserID = user.SYSUserID;
                             sysUserProfile.RowModifiedSYSUserID = user.SYSUserID;
                             sysUserProfile.RowCreatedDateTime = DateTime.Now;

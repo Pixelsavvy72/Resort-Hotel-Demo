@@ -88,7 +88,7 @@ namespace ResortHotelRev2.Controllers
         }
 
         [AuthorizeRoles("Admin")]
-        public ActionResult UpdateUserData(int userID, string loginName, string password, string firstName, string lastName, string phone, int roleID = 0)
+        public ActionResult UpdateUserData(int userID, string loginName, string password, string firstName, string lastName, string phone, string email, string userNotes, int roleID = 0)        
         {
             UserProfileView userProfileView = new UserProfileView();
             userProfileView.SYSUserID = userID;
@@ -97,6 +97,8 @@ namespace ResortHotelRev2.Controllers
             userProfileView.FirstName = firstName;
             userProfileView.LastName = lastName;
             userProfileView.PhoneNumber = phone;
+            userProfileView.Email = email;
+            userProfileView.UserNotes = userNotes;
 
             if (roleID > 0)
                 userProfileView.LOOKUPRoleID = roleID;

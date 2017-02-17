@@ -25,6 +25,7 @@ namespace ResortHotelRev2.Models.DB
         public string PhoneNumber { get; set; }
         public Nullable<System.DateTime> MemberSince { get; set; }
         public string UserNotes { get; set; }
+        public string Email { get; set; }
     
         public virtual SYSUser SYSUser { get; set; }
     }

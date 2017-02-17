@@ -23,8 +23,8 @@ This program is an in-progress hotel reservation system. It allows for the creat
 
 - [ ] Add Associate Role – mid-level restricted permission role for general employees.
 - [ ] Add ability for user to view a placed reservation.
-- [ ] Add Associate and Admin notes fields attached to individual users. (Ex: Likes extra towels.)
-- [ ] Add user email.
+- [x] Add Associate and Admin notes fields attached to individual users. (Ex: Likes extra towels.)
+- [x] Add user email.
 - [ ] Add password confirmation field during sign-up.
 - [ ] Add reset password functionality.
 - [ ] Allow users to delete their own account.

@@ -25,7 +25,7 @@ This program is an in-progress hotel reservation system. It allows for the creat
 - [ ] Add ability for user to view a placed reservation.
 - [x] Add Associate and Admin notes fields attached to individual users. (Ex: Likes extra towels.)
 - [x] Add user email.
-- [ ] Add password confirmation field during sign-up.
+- [x] Add password confirmation field during sign-up.
 - [ ] Add reset password functionality.
 - [ ] Allow users to delete their own account.
 - [ ] Allow for cancellation of part of a reservation (ex: 1 room of a 3 room reservation)

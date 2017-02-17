@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -21,6 +22,10 @@ namespace ResortHotelRev2.Models.ViewModel
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
+        [Display(Name = "Verify Password")]
+        [NotMapped]
+        [Compare("Password", ErrorMessage ="Passwords don't match.")]
+        public string PasswordVerification { get; set; }
         [Required(ErrorMessage = "Please enter your first name.")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }

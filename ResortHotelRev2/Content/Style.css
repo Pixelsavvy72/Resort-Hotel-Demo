@@ -1,0 +1,474 @@
+﻿/* xs devices */
+body {
+    
+}
+
+
+#body-content {
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.125em;
+    padding: 0 0 50px 0;
+    
+    
+}   
+
+
+.innerContent {
+    padding: 20px 10px 0px 10px;
+}
+
+
+
+#largeNavbarBox {
+    display: none;
+}
+
+
+.navbar-header {
+    background-color: #400000;
+    padding: 0 2% 0 7%;    
+    box-shadow: 0px 3px 20px white; 
+
+}
+
+.navbar {
+    background-color: rgba(255,255,255,0); 
+    border: none;
+
+}
+
+.navbar-container {
+    
+    width: 100%;
+}
+
+.navbar-collapse {
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.39);
+    width: 50%;
+    float: right;
+}
+
+
+
+.navbar li {
+
+    background-color: #400000;
+    margin: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+
+   
+}
+
+.navbar hr {
+    display: none;
+}
+
+.navbar-brand {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #400000;
+}
+
+#loginLinks {
+    display: none;
+
+}
+
+#accountButton {
+    border: none;
+    padding: 5px 5px 0px 5px;
+}
+
+#accountIcon {
+    font-size: 24px; 
+    color: white;
+}
+
+#myAcctText {font-family: 'Open Sans', sans-serif;}
+
+
+/*Remove Login Page Header*/
+
+#loginPage {
+    background-color: rgba(0,0,0,0.0);
+    margin: 10px;
+    font-weight: 600;
+   
+}
+
+#loginButton {
+    background-color: #400000;
+    text-align: left;
+    margin: 0px;
+    font-weight: 600;
+}
+
+#loginPage footer {
+    display: none;
+}
+
+#loginPage h2 {
+    display: none;
+}
+
+.loginLabel {
+    display: none;
+}
+
+h1 {
+    
+    font-size: 2em;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+h2 {
+    font-size: 1.75em;
+    text-align: center
+}
+
+.mySlickCarousel img {
+    width: 100%
+}
+
+#carouselContainer {
+    padding: 0;
+    margin: 0;
+
+}
+
+/*OLD BOOTSTRAP CAROUSEL*/
+/*#carouselContainer {
+    padding: 0px;
+    margin-bottom: -40px;
+    
+}
+
+#myCarousel {
+    z-index: 2;
+    position: relative;
+}
+
+#myCarousel img {
+    min-width: 100%;
+}
+
+.carousel-indicators li { 
+    visibility: hidden; 
+}*/
+
+.myBoxShadow {
+    
+    border-radius: 50%;
+    width: 100%;
+    height: 10px;
+    box-shadow: 0px 10px 10px rgba(0,0,0,.7);
+    margin-top: -15px
+    
+            
+}
+
+#secondaryNavbar .nav {
+    margin: 7px 0 0 -30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#secondaryNavbar li {
+    background-color: rgba(0,0,0,0.0);    
+    width: 100px;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+
+#secondaryNavbarHeader {
+    height: 75px;
+    width: 100%;
+    background-color: green;
+    margin: -2px 0 0 0;
+        
+}
+
+.material-icons.md-36.md-light { 
+    text-align: center;
+    margin: .5em 0 0 0;
+    font-size: 36px; 
+    color: white;
+
+}
+
+
+.secondaryNavbarText {
+    color: white;
+    text-align:center;
+    font-size: .7em;
+    line-height: 1em;
+    margin: -2em 0 -1em 0;
+}
+
+
+ /*Index Page*/
+.indexPic {
+    display: block;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+
+
+
+
+/*Current Bootstrap Docs
+-------------------------------------------------------
+Extra small devices (phones, less than 768px) 
+No media query since this is the default in Bootstrap 
+
+Small devices (tablets, 768px and up) 
+@media (min-width: @screen-sm-min) { ... }
+
+Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) { ... }
+
+Large devices (large desktops, 1200px and up)
+@media (min-width: @screen-lg-min) { ... }
+We occasionally expand on these media queries to include a max-width to limit CSS to a narrower set of devices.
+
+@media (max-width: @screen-xs-max) { ... }
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
+@media (min-width: @screen-lg-min) { ... }
+
+End Bootstrap Docs 
+------------------------------------------------------
+*/ 
+
+/* Xsmall*/
+@media screen and (max-width: 767px) {
+    /*Testing only*/
+    .body-content {
+
+    }
+
+    .indexBlocks {
+        background-color: white !important;
+        opacity: 1;
+    }
+
+
+
+}
+
+/*Small Devices - Tablets 768px and up*/
+
+@media screen and (min-width: 768px) {
+
+    .body-content {
+         
+    }
+
+    #primaryNavbar .navbar-header {
+    float: none;
+    }
+    #primaryNavbar .navbar-left, #primaryNavbar .navbar-right {
+        float: none !important;
+    }
+    #primaryNavbar .navbar-toggle {
+        display: block;
+    }
+    #primaryNavbar .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    #primaryNavbar .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    #primaryNavbar .navbar-collapse.collapse {
+        display: none!important;
+    }
+    #primaryNavbar .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    #primaryNavbar .navbar-nav>li {
+        float: none;
+    }
+    #primaryNavbar .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #primaryNavbar .collapse.in{
+        display:block !important;
+    }
+
+
+    .innerContent {
+        padding: 20px 30px 0px 10px;
+    }
+
+    .indexBlocksContainer {
+        padding: 0;
+        margin: 0;
+    }
+
+    .indexBlocks {
+        padding: 5px 0 20px 0;
+    }
+
+    .indexBlocks > p {
+        height: 100px;
+    }
+
+    #secondaryNavbarHeader .nav {
+        float: none;
+    }
+
+}
+
+/*Medium Devices - Desktops 992px and up*/
+@media screen and (min-width: 992px) {
+    .body-content {
+        background-color: white;
+    }   
+
+    h1 {
+        font-family: 'Tangerine', cursive;
+        font-size: 6em;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .navbar-collapse {
+        width: 30%
+    }
+
+    #secondaryNavbar {
+        display: none;
+
+    }
+
+    .indexBlocksContainer {
+        padding: 0;
+        align-items: center;
+    }
+
+    .indexBlocks {
+        height: auto;
+        width: 400px;
+        margin-bottom: 50px;
+        padding-bottom: 3em;
+       
+    }
+
+    .indexBlocks img {
+        width: 200px;
+        height: 200px
+    }
+
+    .indexBlocks h2 {
+        font-family: 'Tangerine', cursive;
+        font-size: 6em;
+        color: white;
+        
+
+    }
+
+    .indexBlocksContainer p {
+        margin-top: 80px;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+   
+    .indexBlocksContainer:nth-child(even) p {
+        
+        float: right;
+
+    }
+
+    .indexBlocksContainer:nth-child(odd) p {
+
+        float: left;
+
+    }
+
+    .indexBlocksContainer:nth-child(even) .indexBlocks {
+        float: right;
+
+    }
+
+    .indexBlocksContainer:nth-child(odd) .indexBlocks {
+        float: left;
+
+    }
+   
+
+    /*SIDE MENU NAVBAR*/
+
+    #largeNavbarBox {  
+        display:unset;   
+        background-color: rgba(0,0,0,0.7);
+        width: 20%;        
+        position: absolute;
+        top: 100px;
+        margin-left: -300px;
+        float: left;
+
+    }
+
+    #largeNavbarMenuText {
+        
+        color: white !important;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 3em;
+
+    }
+
+    /*TODO: Fix for no javascript browsers*/
+    .largeNavbarItems {        
+        opacity: 0;
+        font-size: 1.5em;
+        line-height: 3em;
+        
+        
+    }
+    .largeNavbarItems a {
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        text-decoration: none;
+        margin: -55px;
+        
+    }
+
+    .secondaryNavbarText {
+        font-size: 1em;
+    }
+}
+
+
+
+/*Large Devices - 1200px*/
+@media screen and (min-width: 1200px) {
+    .body-content {
+        background-color: lightgoldenrodyellow;
+    }   
+
+}

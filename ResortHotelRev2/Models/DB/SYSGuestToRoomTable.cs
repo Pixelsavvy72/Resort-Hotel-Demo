@@ -16,9 +16,9 @@ namespace ResortHotelRev2.Models.DB
     {
         public int Id { get; set; }
         public int GuestId { get; set; }
-        public int OccupiedRoomId { get; set; }
+        public int ReservationId { get; set; }
+        public int RoomReserved { get; set; }
     
-        public virtual SYSOccupiedRoomTable SYSOccupiedRoomTable { get; set; }
-        public virtual SYSGuestTable SYSGuestTable { get; set; }
+        public virtual SYSReservationTable SYSReservationTable { get; set; }
     }
 }

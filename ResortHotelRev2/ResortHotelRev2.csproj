@@ -131,15 +131,32 @@
     <Content Include="App_Data\ResortDB_log.ldf">
       <DependentUpon>ResortDB.mdf</DependentUpon>
     </Content>
+    <Content Include="BackupTest\HtmlPage1.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\hotelCafe_1920x1280.jpg" />
+    <Content Include="Content\images\mountain_1920x1280.jpg" />
+    <Content Include="Content\images\pillows_1920x1280.jpg" />
     <Content Include="Content\images\RoomPics\Classic-King_176_120_s.jpg" />
     <Content Include="Content\images\RoomPics\Deluxe-King-Room_160_120_s.jpg" />
     <Content Include="Content\images\RoomPics\lodge-room_160_120_s.jpg" />
     <Content Include="Content\images\RoomPics\Superior-King1_182_120_s.jpg" />
+    <Content Include="Content\images\skiier_1920x1280.jpg" />
+    <Content Include="Content\images\sm_roomInterior_sm_450x300.jpg" />
+    <Content Include="Content\images\sm_skiier_450x300.jpg" />
+    <Content Include="Content\images\sm_sparkler_sm_450x300.jpg" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\slick-1.6.0\.gitignore" />
+    <Content Include="Content\slick-1.6.0\index.html" />
+    <Content Include="Content\slick-1.6.0\slick\ajax-loader.gif" />
+    <Content Include="Content\slick-1.6.0\slick\fonts\slick.svg" />
+    <Content Include="Content\slick-1.6.0\slick\slick-theme.css" />
+    <Content Include="Content\slick-1.6.0\slick\slick.css" />
+    <Content Include="Content\slick-1.6.0\slick\slick.js" />
+    <Content Include="Content\slick-1.6.0\slick\slick.min.js" />
+    <Content Include="Content\Style.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -208,6 +225,23 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\slick-1.6.0\bower.json" />
+    <Content Include="Content\slick-1.6.0\component.json" />
+    <Content Include="Content\slick-1.6.0\CONTRIBUTING.markdown" />
+    <Content Include="Content\slick-1.6.0\ISSUE_TEMPLATE.md" />
+    <Content Include="Content\slick-1.6.0\LICENSE" />
+    <Content Include="Content\slick-1.6.0\Makefile" />
+    <Content Include="Content\slick-1.6.0\package.json" />
+    <Content Include="Content\slick-1.6.0\README.markdown" />
+    <Content Include="Content\slick-1.6.0\slick.jquery.json" />
+    <Content Include="Content\slick-1.6.0\slick\config.rb" />
+    <Content Include="Content\slick-1.6.0\slick\fonts\slick.eot" />
+    <Content Include="Content\slick-1.6.0\slick\fonts\slick.ttf" />
+    <Content Include="Content\slick-1.6.0\slick\fonts\slick.woff" />
+    <Content Include="Content\slick-1.6.0\slick\slick-theme.less" />
+    <Content Include="Content\slick-1.6.0\slick\slick-theme.scss" />
+    <Content Include="Content\slick-1.6.0\slick\slick.less" />
+    <Content Include="Content\slick-1.6.0\slick\slick.scss" />
     <None Include="Properties\PublishProfiles\ResortHotel - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ResortHotelAzure - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\ResortHotelAzure - Web Deploy.pubxml" />
@@ -216,6 +250,7 @@
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\craigDesignScript.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -322,6 +357,8 @@
     <Content Include="Views\Reservation\PlaceReservation.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Reservation\ViewMyReservations.cshtml" />
+    <Content Include="Views\Reservation\MustLogin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

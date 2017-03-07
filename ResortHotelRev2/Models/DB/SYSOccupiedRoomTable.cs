@@ -14,21 +14,13 @@ namespace ResortHotelRev2.Models.DB
     
     public partial class SYSOccupiedRoomTable
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SYSOccupiedRoomTable()
-        {
-            this.SYSGuestToRoomTables = new HashSet<SYSGuestToRoomTable>();
-        }
-    
         public int Id { get; set; }
         public System.DateTime CheckIN { get; set; }
         public System.DateTime CheckOUT { get; set; }
         public int RoomID { get; set; }
         public int ReservationID { get; set; }
     
-        public virtual SYSReservationTable SYSReservationTable { get; set; }
         public virtual SYSRoomsTable SYSRoomsTable { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SYSGuestToRoomTable> SYSGuestToRoomTables { get; set; }
+        public virtual SYSReservationTable SYSReservationTable { get; set; }
     }
 }

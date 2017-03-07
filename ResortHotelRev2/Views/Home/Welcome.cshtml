@@ -3,16 +3,23 @@
     ViewBag.Title = "Welcome";
 }
 
-<h2>Hello, <b>@Context.User.Identity.Name</b>.<br /> Thank you for choosing the Overlook Resort Hotel.</h2>
+<meta http-equiv="refresh" content="3;url=/">
 
-<br />
+<h3>Hello, <b>@Context.User.Identity.Name</b>.<br /> Thank you for choosing the Overlook Resort Hotel.</h3>
+
+
+
+
+@*<br />
 @Html.ActionLink("Make a Reservation", "Reservation", "Reservation") | 
+@Html.ActionLink("View My Reservations", "ViewMyReservations", "Reservation") | 
 @Html.ActionLink("Edit Profile", "EditProfile", "Home") | 
 @Html.ActionLink("Signout", "SignOut", "Account") 
 
-<br /> 
+<br />*@ 
 
 <!--Add account managment link if logged in as Admin-->
+@*TODO: Move this to layout footer.*@
 @if (Context.User.Identity.IsAuthenticated)
 {
     UserManager UM = new UserManager();

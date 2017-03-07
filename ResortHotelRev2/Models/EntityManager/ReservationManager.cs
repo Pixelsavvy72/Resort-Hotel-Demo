@@ -9,14 +9,10 @@ namespace ResortHotelRev2.Models.EntityManager
 {
     public class ReservationManager
     {
-        public void AddReservation(RoomAndReservationModel roomResModel)
+        public void AddReservation(RoomAndReservationModel roomResModel, int userId)
         {
             ResortDBEntities db = new ResortDBEntities();
-
-
-
-
-            SYSUser user = new SYSUser();            
+          
             SYSReservationTable reservationTable = new SYSReservationTable();
 
             reservationTable.DateIN = roomResModel.CheckIn;
@@ -40,9 +36,62 @@ namespace ResortHotelRev2.Models.EntityManager
 
                 db.SYSOccupiedRoomTables.Add(roomOccupied);
                 db.SaveChanges();
+                
+
+                SYSGuestToRoomTable guestToRoom = new SYSGuestToRoomTable();
+                guestToRoom.GuestId = userId;
+                guestToRoom.ReservationId = reservationTable.Id;
+                guestToRoom.RoomReserved = rm.RoomId;
+
+                db.SYSGuestToRoomTables.Add(guestToRoom);
+                db.SaveChanges();
             }
+        
                         
         } //end AddReservation
+
+        public List<RoomAndReservationModel> GetMyReservations(int userId) 
+        {
+            //TODO: Model after GetAllUserProfiles
+            List<int> myReservationIds = new List<int>();
+            List<RoomAndReservationModel> myReservationsInfo = new List<RoomAndReservationModel>();
+            ResortDBEntities db = new ResortDBEntities();
+
+            //Refactor Get all reservation Ids
+            foreach (var reservation in db.SYSReservationTables)
+            {
+                if (reservation.ReservedByUserId == userId)
+                {
+                    myReservationIds.Add(reservation.Id);
+                }
+
+            }
+
+            foreach (var reservationId in myReservationIds)
+            {
+                RoomAndReservationModel roomResModel = new RoomAndReservationModel();
+                var reservationTableProfile = db.SYSReservationTables.Find(reservationId);
+                var userProfile = db.SYSUserProfiles.Find(userId);
+
+                roomResModel.Id = reservationTableProfile.Id;
+                roomResModel.DatePlaced = reservationTableProfile.ReservationPlaced;
+                roomResModel.CheckIn = reservationTableProfile.DateIN;
+                roomResModel.CheckOut = reservationTableProfile.DateOUT;
+                //roomResModel.ReservationStatus = reservationTableProfile.Status;
+
+                myReservationsInfo.Add(roomResModel);
+            }
+
+            
+
+
+
+
+
+
+            return myReservationsInfo;
+        }
+
         
     }
 }

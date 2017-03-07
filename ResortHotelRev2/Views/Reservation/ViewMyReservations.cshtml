@@ -1,0 +1,51 @@
+﻿@*@model ResortHotelRev2.Models.ViewModel.RoomAndReservationModel*@
+
+@model IList<ResortHotelRev2.Models.ViewModel.RoomAndReservationModel>
+
+@{
+    ViewBag.Title = "ViewMyReservations";
+}
+
+<div class="table-responsive">
+    <h1>My Reservations</h1>
+    <table class="table-condensed table-hover table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Reservation <br /> Number</th>
+                <th>Date Placed</th>
+                <th>Rooms Selected</th>
+                <th>King Beds</th>
+                <th>Queen Beds</th>
+                <th>Smoking</th>
+                <th>Check-In</th>
+                <th>Check-Out</th>
+                <th>Reservation Status</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Model.Count; i++)
+
+            {
+
+                <tr>
+                    <td>@Html.DisplayFor(r => r[i].Id)</td>
+                    <td></td>
+                    <td></td>
+                    @*TODO: Add room information*@
+                    @*<td>@Html.DisplayFor(r => r[i].KingBeds)</td>
+                    <td>@Html.DisplayFor(r => r[i].RoomResRmProfile[i].QueenBeds)</td>*@
+                    <td>@Html.DisplayFor(r => r[i].CheckIn)</td>
+                    <td>@Html.DisplayFor(r => r[i].CheckOut)</td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+
+
+
+</div>

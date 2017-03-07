@@ -17,8 +17,9 @@ namespace ResortHotelRev2.Models.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SYSReservationTable()
         {
-            this.SYSRoomReservedTables = new HashSet<SYSRoomReservedTable>();
+            this.SYSGuestToRoomTables = new HashSet<SYSGuestToRoomTable>();
             this.SYSOccupiedRoomTables = new HashSet<SYSOccupiedRoomTable>();
+            this.SYSRoomReservedTables = new HashSet<SYSRoomReservedTable>();
         }
     
         public int Id { get; set; }
@@ -27,11 +28,13 @@ namespace ResortHotelRev2.Models.DB
         public string Status { get; set; }
         public string MadeBy { get; set; }
         public Nullable<int> ReservedByUserId { get; set; }
-        public Nullable<System.DateTime> ReservationPlaced { get; set; }
+        public System.DateTime ReservationPlaced { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SYSRoomReservedTable> SYSRoomReservedTables { get; set; }
+        public virtual ICollection<SYSGuestToRoomTable> SYSGuestToRoomTables { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SYSOccupiedRoomTable> SYSOccupiedRoomTables { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SYSRoomReservedTable> SYSRoomReservedTables { get; set; }
     }
 }

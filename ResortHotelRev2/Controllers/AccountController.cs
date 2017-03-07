@@ -3,8 +3,10 @@ using ResortHotelRev2.Models.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using System.Web.Security;
 
 
@@ -43,6 +45,7 @@ namespace ResortHotelRev2.Controllers
             return View();
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken()]
         public ActionResult LogIn(UserLoginView userLoginView, string returnUrl)
@@ -65,6 +68,13 @@ namespace ResortHotelRev2.Controllers
                     if (userLoginView.Password.Equals(password))
                     {
                         FormsAuthentication.SetAuthCookie(userLoginView.LoginName, false);
+                        
+                        if (TempData.ContainsKey("roomDataView"))
+                        {                            
+                            return RedirectToAction("VerifyReservationInfo", "Reservation");
+                        }
+
+
                         return RedirectToAction("Welcome", "Home");
                     } 
                     else

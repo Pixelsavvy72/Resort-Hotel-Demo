@@ -28,19 +28,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SYSReservationTables">
-      <EntityTypeMapping TypeName="ResortDBModel.SYSReservationTable">
-        <MappingFragment StoreEntitySet="SYSReservationTable">
-          <ScalarProperty Name="ReservationPlaced" ColumnName="ReservationPlaced" />
-          <ScalarProperty Name="ReservedByUserId" ColumnName="ReservedByUserId" />
-          <ScalarProperty Name="MadeBy" ColumnName="MadeBy" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="DateOUT" ColumnName="DateOUT" />
-          <ScalarProperty Name="DateIN" ColumnName="DateIN" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SYSRoomsTables">
       <EntityTypeMapping TypeName="ResortDBModel.SYSRoomsTable">
         <MappingFragment StoreEntitySet="SYSRoomsTable">
@@ -73,15 +60,6 @@
           <ScalarProperty Name="RoomID" ColumnName="RoomID" />
           <ScalarProperty Name="CheckOUT" ColumnName="CheckOUT" />
           <ScalarProperty Name="CheckIN" ColumnName="CheckIN" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SYSGuestToRoomTables">
-      <EntityTypeMapping TypeName="ResortDBModel.SYSGuestToRoomTable">
-        <MappingFragment StoreEntitySet="SYSGuestToRoomTable">
-          <ScalarProperty Name="OccupiedRoomId" ColumnName="OccupiedRoomId" />
-          <ScalarProperty Name="GuestId" ColumnName="GuestId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -124,6 +102,29 @@
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="SYSUserID" ColumnName="SYSUserID" />
           <ScalarProperty Name="SYSUserProfileID" ColumnName="SYSUserProfileID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYSGuestToRoomTables">
+      <EntityTypeMapping TypeName="ResortDBModel.SYSGuestToRoomTable">
+        <MappingFragment StoreEntitySet="SYSGuestToRoomTable">
+          <ScalarProperty Name="RoomReserved" ColumnName="RoomReserved" />
+          <ScalarProperty Name="ReservationId" ColumnName="ReservationId" />
+          <ScalarProperty Name="GuestId" ColumnName="GuestId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYSReservationTables">
+      <EntityTypeMapping TypeName="ResortDBModel.SYSReservationTable">
+        <MappingFragment StoreEntitySet="SYSReservationTable">
+          <ScalarProperty Name="ReservationPlaced" ColumnName="ReservationPlaced" />
+          <ScalarProperty Name="ReservedByUserId" ColumnName="ReservedByUserId" />
+          <ScalarProperty Name="MadeBy" ColumnName="MadeBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateOUT" ColumnName="DateOUT" />
+          <ScalarProperty Name="DateIN" ColumnName="DateIN" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

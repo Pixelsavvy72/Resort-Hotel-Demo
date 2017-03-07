@@ -27,13 +27,13 @@ namespace ResortHotelRev2.Models.DB
     
         public virtual DbSet<LOOKUPRole> LOOKUPRoles { get; set; }
         public virtual DbSet<SYSUserRole> SYSUserRoles { get; set; }
-        public virtual DbSet<SYSReservationTable> SYSReservationTables { get; set; }
         public virtual DbSet<SYSRoomsTable> SYSRoomsTables { get; set; }
         public virtual DbSet<SYSRoomReservedTable> SYSRoomReservedTables { get; set; }
         public virtual DbSet<SYSOccupiedRoomTable> SYSOccupiedRoomTables { get; set; }
-        public virtual DbSet<SYSGuestToRoomTable> SYSGuestToRoomTables { get; set; }
         public virtual DbSet<SYSUser> SYSUsers { get; set; }
         public virtual DbSet<SYSGuestTable> SYSGuestTables { get; set; }
         public virtual DbSet<SYSUserProfile> SYSUserProfiles { get; set; }
+        public virtual DbSet<SYSGuestToRoomTable> SYSGuestToRoomTables { get; set; }
+        public virtual DbSet<SYSReservationTable> SYSReservationTables { get; set; }
     }
 }

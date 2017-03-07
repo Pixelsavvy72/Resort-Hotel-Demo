@@ -28,6 +28,8 @@ namespace ResortHotelRev2.Models.ViewModel
         public DateTime CheckOut { get; set; }
         public ReservationStatus ReservationStatus { get; set; }
         public MadeByType MadeBy { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime DatePlaced { get; set; }
 
     }
 

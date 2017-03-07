@@ -14,7 +14,7 @@ namespace ResortHotelRev2.Controllers
     {
         
         // GET: Reservation
-        [Authorize]
+        
         public ActionResult Reservation()
         {
 
@@ -24,7 +24,7 @@ namespace ResortHotelRev2.Controllers
 
         // Takes in a starting date and end date from JS Calendar in Reservation.cshtml and returns
         // partial view to Reservation.cshtml showing rooms available for those dates.
-        [Authorize]
+        
         [HttpGet]
         public ActionResult SelectRoomPartial(string startDate, string endDate)
         {
@@ -36,12 +36,12 @@ namespace ResortHotelRev2.Controllers
                 DateTime startDateConverted = DateTime.ParseExact(startDate, "MM/dd/yyyy", new CultureInfo("en-US"));
                 DateTime endDateConverted = DateTime.ParseExact(endDate, "MM/dd/yyyy", new CultureInfo("en-US"));
 
-                RoomManager RoomManager = new RoomManager();
-                RoomDataView RoomDataView = RoomManager.GetRoomProfileView(startDateConverted, endDateConverted);
+                RoomManager roomManager = new RoomManager();
+                RoomDataView roomDataView = roomManager.GetRoomProfileView(startDateConverted, endDateConverted);
 
                 //Passes check in/out dates to model for view to send back to VerifyReservationInfo below
 
-                foreach (var room in RoomDataView.RoomProfile)
+                foreach (var room in roomDataView.RoomProfile)
                 {
                     room.CheckIn = startDateConverted;
                     room.CheckOut = endDateConverted;
@@ -50,18 +50,30 @@ namespace ResortHotelRev2.Controllers
                 ViewBag.startDateToPartial = startDateConverted.ToShortDateString();
                 ViewBag.endDateToPartial = endDateConverted.ToShortDateString();
 
-                return PartialView(RoomDataView);
+                return PartialView(roomDataView);
             }
             
             return View();
 
         }
 
-        //Send selected rooms information (from partial view) and user profile information to VerifyReservationInfo view.
-        [HttpPost]
-        [Authorize]
-        public ActionResult VerifyReservationInfo(RoomDataView model)
+        //If user is not logged in when attempting to place a reservation, AccountController/Login will login the user and call
+        //this method, which collects the model from tempData and passes it to the HttpPost.
+
+        [HttpGet]
+        public ActionResult VerifyReservationInfo()
         {
+            RoomDataView tempData = (RoomDataView) TempData["roomDataView"];
+            return VerifyReservationInfo(tempData);
+        }
+
+
+        //Send selected rooms information (from partial view) and user profile information to VerifyReservationInfo view.
+
+        [HttpPost]        
+        public ActionResult VerifyReservationInfo(RoomDataView model)
+        {           
+
             if (ModelState.IsValid)
             {
 
@@ -74,6 +86,7 @@ namespace ResortHotelRev2.Controllers
                 List<RoomProfileView> RoomsSelectedList = new List<RoomProfileView>();
 
                 GetSelectedRooms(model, RoomsSelectedList);
+                
 
                 //Check user selected at least one room.
                 if (RoomsSelectedList.Count == 0)
@@ -90,7 +103,20 @@ namespace ResortHotelRev2.Controllers
                 RoomResModel.CheckIn = RoomsSelectedList[0].CheckIn;
                 RoomResModel.CheckOut = RoomsSelectedList[0].CheckOut;
 
-                return View(RoomResModel);
+                if (User.Identity.IsAuthenticated)
+                {
+                    TempData.Remove("roomDataView");
+                    return View(RoomResModel);
+                }
+                else
+                {
+
+                    TempData["roomDataView"] = model;
+
+                    return View("MustLogin");
+                }
+
+                
             }
             
             return View();
@@ -103,14 +129,31 @@ namespace ResortHotelRev2.Controllers
         {
             if (ModelState.IsValid)
             {
+                var userName = User.Identity.Name;
+                UserManager userManager = new UserManager();
                 ReservationManager reservationManager = new ReservationManager();
 
-                reservationManager.AddReservation(RoomResModel);
+                reservationManager.AddReservation(RoomResModel, userManager.GetUserID(userName));
             }
-            
+
             return View();
         }
 
+        [Authorize]
+        public ActionResult ViewMyReservations()
+        {
+            ReservationManager reservationManager = new ReservationManager();
+            UserManager userManager = new UserManager();
+            var loginName = User.Identity.Name;
+            var userId = userManager.GetUserID(loginName);
+            List<RoomAndReservationModel> myReservations = reservationManager.GetMyReservations(userId);
+
+
+
+            return View(myReservations);
+        }
+
+        
         //Gets a list of selected rooms used in ActionResult VerifyReservationInfo.
         private static void GetSelectedRooms(RoomDataView model, List<RoomProfileView> RoomsSelectedList)
         {

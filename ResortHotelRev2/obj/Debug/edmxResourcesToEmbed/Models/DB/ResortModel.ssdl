@@ -25,9 +25,10 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GuestId" Type="int" Nullable="false" />
-    <Property Name="OccupiedRoomId" Type="int" Nullable="false" />
+    <Property Name="ReservationId" Type="int" Nullable="false" />
+    <Property Name="RoomReserved" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="SYSOccupiedRoomTable">
     <Key>
@@ -49,7 +50,7 @@
     <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="MadeBy" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="ReservedByUserId" Type="int" />
-    <Property Name="ReservationPlaced" Type="datetime2" Precision="7" />
+    <Property Name="ReservationPlaced" Type="datetime2" Precision="7" Nullable="false" />
   </EntityType>
   <EntityType Name="SYSRoomReservedTable">
     <Key>
@@ -116,27 +117,15 @@
     <Property Name="RowModifiedSYSUserID" Type="int" Nullable="false" />
     <Property Name="RowModifiedDateTime" Type="datetime" />
   </EntityType>
-  <Association Name="FK__SYSGuestT__Guest__6FE99F9F">
-    <End Role="SYSGuestTable" Type="Self.SYSGuestTable" Multiplicity="1" />
+  <Association Name="FK__SYSGuestT__Reser__2EA5EC27">
+    <End Role="SYSReservationTable" Type="Self.SYSReservationTable" Multiplicity="1" />
     <End Role="SYSGuestToRoomTable" Type="Self.SYSGuestToRoomTable" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="SYSGuestTable">
+      <Principal Role="SYSReservationTable">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="SYSGuestToRoomTable">
-        <PropertyRef Name="GuestId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__SYSGuestT__Occup__51300E55">
-    <End Role="SYSOccupiedRoomTable" Type="Self.SYSOccupiedRoomTable" Multiplicity="1" />
-    <End Role="SYSGuestToRoomTable" Type="Self.SYSGuestToRoomTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SYSOccupiedRoomTable">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="SYSGuestToRoomTable">
-        <PropertyRef Name="OccupiedRoomId" />
+        <PropertyRef Name="ReservationId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -199,12 +188,8 @@
     <EntitySet Name="SYSUser" EntityType="Self.SYSUser" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SYSUserProfile" EntityType="Self.SYSUserProfile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SYSUserRole" EntityType="Self.SYSUserRole" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__SYSGuestT__Guest__6FE99F9F" Association="Self.FK__SYSGuestT__Guest__6FE99F9F">
-      <End Role="SYSGuestTable" EntitySet="SYSGuestTable" />
-      <End Role="SYSGuestToRoomTable" EntitySet="SYSGuestToRoomTable" />
-    </AssociationSet>
-    <AssociationSet Name="FK__SYSGuestT__Occup__51300E55" Association="Self.FK__SYSGuestT__Occup__51300E55">
-      <End Role="SYSOccupiedRoomTable" EntitySet="SYSOccupiedRoomTable" />
+    <AssociationSet Name="FK__SYSGuestT__Reser__2EA5EC27" Association="Self.FK__SYSGuestT__Reser__2EA5EC27">
+      <End Role="SYSReservationTable" EntitySet="SYSReservationTable" />
       <End Role="SYSGuestToRoomTable" EntitySet="SYSGuestToRoomTable" />
     </AssociationSet>
     <AssociationSet Name="FK__SYSOccupi__Reser__503BEA1C" Association="Self.FK__SYSOccupi__Reser__503BEA1C">

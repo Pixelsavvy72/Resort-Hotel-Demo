@@ -1,14 +1,145 @@
 ﻿@{
     ViewBag.Title = "Index";
-    
+
 }
 
-<h2>Welcome to the Overlook Resort Hotel</h2>
-<br />
-@if (!(Context.User.Identity.IsAuthenticated))
-{
-    @Html.ActionLink("Login", "Login", "Account")<span> | </span>
-}
+<div class="container-fluid" id="innerContentContainer">
 
-@Html.ActionLink("Create an account", "SignUp", "Account")<span> | </span>
-@Html.ActionLink("Make a Reservation", "Reservation", "Reservation")
+    @*Carousel*@
+        <div class="container-fluid" id="carouselContainer">
+            <div class="row">
+
+                <div class="mySlickCarousel">
+                    <div><img class="img-responsive" src="~/Content/images/overlookHotel_1920x1280.jpg" alt="Its really the Stanley Hotel" /></div>
+                    <div><img class="img-responsive" src="~/Content/images/mountain_1920x1280.jpg" alt="Misty mountain" /></div>
+                    <div><img class="img-responsive" src="~/Content/images/pillows_1920x1280.jpg" alt="Pillows on hotel bed" /></div>
+                    <div><img class="img-responsive" src="~/Content/images/skiier_1920x1280.jpg" alt="Woman skiing" /></div>
+                    <div><img class="img-responsive" src="~/Content/images/hotelCafe_1920x1280.jpg" alt="Barista in hotel cafe" /></div>
+                </div>
+            </div>
+            <div class="myBoxShadow"></div>
+        </div>
+
+    @* SECONDARY NAVIGATION for M, L, XL screens *@
+
+    <div class="container-fluid" id="largeNavbarBox" >
+        <p id="largeNavbarMenuText" style="color: rgba(0,0,0,0.0);">Menu</p>    
+        <ul style="list-style: none">        
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Reservation", "Reservation")">Reservation</a></li>
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="#">Accomodations</a></li>
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="#">Activities</a></li>
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="#">Access</a></li>
+        </ul>
+    </div>
+
+
+    @* BODY CONTENT *@
+    <div class="container innerContent" id="innerContent">
+        <h1>The Overlook Resort Hotel</h1>
+
+        @*intro*@
+        <p style="padding-bottom: 1em;">Phasellus non consequat turpis. Donec a velit id ligula faucibus auctor. Nam at rhoncus sapien. Curabitur tincidunt hendrerit sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam in arcu quis risus imperdiet tincidunt.</p>
+
+        <div class="container col-sm-6 indexBlocksContainer">
+            <div class="indexBlocks col-md-6" style="background-color: cadetblue">
+                <h2>Accomodations</h2>
+                <img class="indexPic" id="accomodationsPic" src="~/Content/images/sm_roomInterior_sm_450x300.jpg" alt="Interior of hotel room" />
+                <p class="col-md-6">Donec at ligula lobortis, semper velit in, pellentesque turpis. Nullam porttitor vestibulum est eget convallis.</p>
+            </div>
+        </div>
+        
+        <div class="container col-sm-6 indexBlocksContainer">
+            <div class="indexBlocks col-md-6" style="background-color: peru">
+                <h2>Activities</h2>
+                <img class="indexPic" id="activititesPic" src="~/Content/images/sm_skiier_450x300.jpg" alt="Woman skiing" />
+                <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
+            </div>
+        </div>
+
+        <div class="container col-sm-6 indexBlocksContainer">
+            <div class="indexBlocks col-md-6" style="background-color: palevioletred">
+                <h2>Shopping</h2>
+                <img class="indexPic" id="offersPic" src="~/Content/images/sm_shop_450x300.jpg" alt="Woman holding sparkler" />
+                <p class="col-md-6">Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
+            </div>
+        </div>
+
+        <div class="container col-sm-6 indexBlocksContainer">
+            <div class="indexBlocks col-md-6" style="background-color: goldenrod">
+                <h2>Offers</h2>
+                <img class="indexPic" id="offersPic" src="~/Content/images/sm_sparkler_sm_450x300.jpg" alt="Woman holding sparkler" />
+                <p class="col-md-6">Donec mollis justo varius, commodo enim a, venenatis eros. Aenean quis nulla augue. Aenean tempus blandit tellus non hendrerit.</p>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* OLD BOOTSTRAP CAROUSEL *@
+@*<div class="container-fluid" id="topContainer">
+        <div class="row">
+            <div id="myCarousel" class="carousel slide center-block" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="~/Content/images/overlookHotel_1920x1280.jpg" alt="Its really the Stanley Hotel" />
+                    </div>
+                    <div class="item">
+                        <img src="~/Content/images/mountain_1920x1280.jpg" alt="Misty mountain" />
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/images/pillows_1920x1280.jpg" alt="Pillows on hotel bed" />
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/images/skiier_1920x1280.jpg" alt="Woman skiing" />
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/images/hotelCafe_1920x1280.jpg" alt="Barista in hotel cafe" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="myBoxShadow"></div>
+    </div>*@

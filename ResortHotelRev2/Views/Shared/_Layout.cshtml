@@ -4,47 +4,159 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @*FONTS*@ 
+    @* TODO: Weed these out later *@
+    <link href="https://fonts.googleapis.com/css?family=Italianno" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Italianno|Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Tillana" rel="stylesheet">
+
+    @* STYLE / SCRIPTS *@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/slick-1.6.0/slick/slick.css" rel="stylesheet" />
+    <link href="~/Content/slick-1.6.0/slick/slick-theme.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/themes/base/all.css" rel="stylesheet" /> 
+    <link href="~/Content/Style.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/jquery-1.12.4.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>    
+    <script src="~/Content/slick-1.6.0/slick/slick.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/craigDesignScript.js"></script>
+    
+
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+<body>    
+    @* Primary Navbar *@
+    
+    <div class="navbar navbar-inverse navbar-fixed-top" id="primaryNavbar" role="navigation">
+        <div class="container navbar-container" style="padding:0;">            
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button type="button" id="accountButton" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span><i class="material-icons md-24 md-light" id="accountIcon">account_circle</i></span>
                 </button>
+                <span id="myAcctText" style="display: none; color: lightgray; margin: auto; float: right; padding-top: 15px; ">My Account</span>
+                @*<img id="navbarLogo" src="~/Content/images/sm_logoOverlook.jpg" alt="Logo of Overlook Hotel" />*@
                 @Html.ActionLink("The Overlook Resort Hotel", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                
             </div>
+                        
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">                             
+                
+                    @if (!(Context.User.Identity.IsAuthenticated))
+                    {
+                        <li><a id="loginButton" class="btn">Login</a></li>                   
+                        <li id="loginPage"></li>
+                        <li>@Html.ActionLink("Create an account", "SignUp", "Account")</li>
+                    }
+
+                    @if (Context.User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Make a Reservation", "Reservation", "Reservation")</li>
+                        <li>@Html.ActionLink("View My Reservations", "ViewMyReservations", "Reservation")</li>
+                        <li>@Html.ActionLink("Logged in as: " + @Context.User.Identity.Name + ". Sign Out?", "SignOut", "Account")</li>
+
+                    }
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="container body-content">
-        @if (Context.User.Identity.IsAuthenticated)
-        {
-            <p>Logged in as: @Context.User.Identity.Name |
-                @Html.ActionLink("Sign out?", "SignOut", "Account")</p>
-        }
+   
+    <div class="container-fluid body-content" id="body-content">
         
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - The Overlook Resort Hotel</p>
+            <p id="footer" style="text-align: center">&copy; @DateTime.Now.Year - The Overlook Resort Hotel</p>
         </footer>
+                
     </div>
-
-
     
-</body>
+
+    @* Secondary Navbar - Small Window Size*@
+    <div class="navbar navbar-default navbar-fixed-bottom" id="secondaryNavbar" role="navigation"> 
+        <div class="navbar-header" id="secondaryNavbarHeader">
+
+            <ul class="nav navbar-nav">
+                <li class="col-xs-3 col-sm-3"><a href="@Url.Action("Reservation", "Reservation")"><p class="secondaryNavbarText"><i class="material-icons md-36 md-light">today</i><br />Reservation</p></a></li>
+                <li class="col-xs-3 col-sm-3"><a href="#"><p class="secondaryNavbarText"><i class="material-icons md-36 md-light">hotel</i><br />Accomodations</p></a></li>
+                <li class="col-xs-3 col-sm-3"><a href="#"><p class="secondaryNavbarText"><i class="material-icons md-36 md-light">directions_run</i><br />Activities</p></a></li>
+                <li class="col-xs-3 col-sm-3"><a href="#"><p class="secondaryNavbarText"><i class="material-icons md-36 md-light">train</i><br />Access</p></a></li>
+
+            </ul>
+        </div>
+    </div>
+   
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+	
+
+            //Loads the login partial page
+            var loginPageOpen = false;
+            $('#loginButton').one("click", function () {
+                $('#loginPage').load('@Url.Action("Login", "Account")');
+                loginPageOpen = true;
+
+                //Closes login partial page if user clicks outside of the container.
+                $(document).click(function (e) {
+
+                    if (loginPageOpen) {
+                        var container = $("#loginPage");
+                        var button = $("#loginButton");
+
+                        if (!button.is(e.target)) {
+                            if (!container.is(e.target) // if the target of the click isn't the container...
+                                && container.has(e.target).length === 0) // ... nor a descendant of the container
+
+                            {
+                                container.empty();
+                                $('.navbar-collapse').collapse('hide');
+
+                                loginPageOpen = false;
+                            }
+
+                        }
+                    }
+                })
+
+            }); //END login page setup
+
+            //if (document.documentElement.clientWidth >= 992) {
+            //    $('#secondaryNavbar').removeClass('navbar-fixed-bottom').prependTo('#body-content');
+            //    $('#myAcctText').show();
+            //}
+
+            //$(window).resize(function () {
+            //    if (document.documentElement.clientWidth >= 992) {
+            //        $('#secondaryNavbar').removeClass('navbar-fixed-bottom').appendTo('#primaryNavbar');
+            //        $('#myAcctText').show();
+            //    }
+            //    else {
+            //        $('#secondaryNavbar').addClass('navbar-fixed-bottom');
+            //        $('#myAcctText').hide();
+            //    }
+            //})
+
+
+    });
+
+
+
+
+
+
+    </script>
+
+
+</body>    
 </html>
+

@@ -55,13 +55,13 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.CheckIn, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.TextBox("Starting Date:", "", new { @class = "date-picker form-control", id = "startDate", placeholder = "month / day / year" })
+            @Html.TextBox("Starting Date:", "", new { @class = "date-picker form-control", id = "startDate", placeholder = "month / day / year", autocomplete = "off" })
             @Html.ValidationMessageFor(model => model.CheckIn, "", new { @class = "text-danger" })
             @*<span id="error"></span>*@
             
             <br />
             @Html.LabelFor(model => model.CheckOut, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.TextBox("Ending Date:", "", new { @class = "date-picker form-control", id = "endDate", placeholder = "month / day / year" })
+            @Html.TextBox("Ending Date:", "", new { @class = "date-picker form-control", id = "endDate", placeholder = "month / day / year", autocomplete = "off" })
             @Html.ValidationMessageFor(model => model.CheckOut, "", new { @class = "text-danger" })
             <br />
 

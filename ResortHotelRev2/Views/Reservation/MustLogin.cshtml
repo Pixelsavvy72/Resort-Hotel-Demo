@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "MustLogin";
+}
+
+<h2>Please Sign-In</h2>
+<p>You must sign-in to place a reservation. Don't worry, all of your reservation information will be saved. 
+    If you don't have an account, please created one. It only takes a moment.</p>
+
+@Html.ActionLink("Sign-In", "Login", "Account")
+@Html.ActionLink("Join Us", "SignUp", "Account")
+

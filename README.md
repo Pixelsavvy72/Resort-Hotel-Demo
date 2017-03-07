@@ -19,10 +19,10 @@ This program is an in-progress hotel reservation system. It allows for the creat
 - Reservation is assigned to User
 - Rooms are made unavailable for those dates.
 
-## Future To-Dos:
+## Backend To-Dos:
 
 - [ ] Add Associate Role – mid-level restricted permission role for general employees.
-- [ ] Add ability for user to view a placed reservation.
+- [x] Add ability for user to view a placed reservation.
 - [x] Add Associate and Admin notes fields attached to individual users. (Ex: Likes extra towels.)
 - [x] Add user email.
 - [x] Add password confirmation field during sign-up.
@@ -36,6 +36,14 @@ This program is an in-progress hotel reservation system. It allows for the creat
 - [ ] Create drop-down in Admin Control Panel for Reservation Placed type (Online, Phone, Front Desk, Travel Agent) and status (confirmed, canceled, completed, in progress).
 - [ ] Allow user to reserve multiple rooms with more than one date range per reservation.
 - [ ] Implement tables not yet implemented.
+
+## Frontend To-Dos:
+- [ ] Design large size homepage
+- [ ] Think about Ajaxifying the login-dropdown.
+- [ ] Add special notifications to large size pages. Sidebar? Drop-in?
+- [ ] Choose better fonts
+- [ ] Choose better colors for indexBlocks.
+- [ ] Design secondary pages
 
 ## Database Table Explanation 
 

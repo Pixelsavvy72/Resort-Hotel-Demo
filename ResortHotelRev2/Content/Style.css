@@ -130,6 +130,8 @@ h2 {
     text-align: center
 }
 
+/*CAROUSEL*/
+
 .mySlickCarousel img {
     width: 100%
 }
@@ -348,12 +350,14 @@ End Bootstrap Docs
     h1 {
         font-family: 'Tangerine', cursive;
         font-size: 6em;
-        font-weight: bold;
+        font-weight: 500;
     }
 
     h2 {
         font-size: 2.5em;
     }
+
+/*NAVBAR ADJUSTMENTS*/
 
     .navbar-collapse {
         width: 30%
@@ -364,9 +368,50 @@ End Bootstrap Docs
 
     }
 
+/*SIDE MENU NAVBAR*/
+
+    #largeNavbarBox {  
+        display:unset;   
+        background-color: rgba(0,0,0,0.7);
+        width: 20%;        
+        position: absolute;
+        top: 100px;
+        margin-left: -300px;
+        float: left;
+
+    }
+
+    #largeNavbarMenuText {
+        
+        color: white !important;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 3em;
+
+    }
+
+    /*TODO: Fix for no javascript browsers*/
+    .largeNavbarItems {        
+        opacity: 0;
+        font-size: 1.5em;
+        line-height: 3em;
+        
+        
+    }
+    .largeNavbarItems a {
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        text-decoration: none;
+        margin: -55px;
+        
+    }
+
+/*INDEX PAGE BLOCK ITEMS*/
+
     .indexBlocksContainer {
         padding: 0;
         align-items: center;
+
     }
 
     .indexBlocks {
@@ -374,6 +419,7 @@ End Bootstrap Docs
         width: 400px;
         margin-bottom: 50px;
         padding-bottom: 3em;
+
        
     }
 
@@ -420,55 +466,34 @@ End Bootstrap Docs
     }
    
 
-    /*SIDE MENU NAVBAR*/
-
-    #largeNavbarBox {  
-        display:unset;   
-        background-color: rgba(0,0,0,0.7);
-        width: 20%;        
-        position: absolute;
-        top: 100px;
-        margin-left: -300px;
-        float: left;
-
-    }
-
-    #largeNavbarMenuText {
-        
-        color: white !important;
-        text-align: center;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 3em;
-
-    }
-
-    /*TODO: Fix for no javascript browsers*/
-    .largeNavbarItems {        
-        opacity: 0;
-        font-size: 1.5em;
-        line-height: 3em;
-        
-        
-    }
-    .largeNavbarItems a {
-        color: white;
-        font-family: 'Open Sans', sans-serif;
-        text-decoration: none;
-        margin: -55px;
-        
-    }
-
-    .secondaryNavbarText {
-        font-size: 1em;
-    }
 }
 
 
 
-/*Large Devices - 1200px*/
+/*Large Devices - 1200px Check this*/
 @media screen and (min-width: 1200px) {
-    .body-content {
-        background-color: lightgoldenrodyellow;
+
+    .innerContent {
+        padding-left: 5em;
+        padding-right: 3em;
     }   
+
+    #introParagraph {
+        padding: 0 10em 0 10em;
+    }
+
+    .sidebar {
+        display: unset !important;
+        height: 100vh;
+        margin-top: 15em;
+        background-color: rgba(63,127,191, 0.5);
+
+    }
+
+
+    .mySlickCarousel img {
+        width: 100vw;
+        height: 100vh;
+    }
 
 }

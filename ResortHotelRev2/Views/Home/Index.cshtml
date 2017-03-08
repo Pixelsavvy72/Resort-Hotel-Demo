@@ -6,7 +6,7 @@
 <div class="container-fluid" id="innerContentContainer">
 
     @*Carousel*@
-        <div class="container-fluid" id="carouselContainer">
+        <div class="container-fluid row" id="carouselContainer">
             <div class="row">
 
                 <div class="mySlickCarousel">
@@ -33,14 +33,16 @@
     </div>
 
 
+
     @* BODY CONTENT *@
-    <div class="container innerContent" id="innerContent">
-        <h1>The Overlook Resort Hotel</h1>
+    <div class="container innerContent col-md-12 col-lg-10" id="innerContent">
+
+        <h1 class="col-lg-12" id="hotelName">The Overlook Resort Hotel</h1>
 
         @*intro*@
-        <p style="padding-bottom: 1em;">Phasellus non consequat turpis. Donec a velit id ligula faucibus auctor. Nam at rhoncus sapien. Curabitur tincidunt hendrerit sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam in arcu quis risus imperdiet tincidunt.</p>
+        <p class="col-lg-12" style="padding-bottom: 1em;" id="introParagraph">Phasellus non consequat turpis. Donec a velit id ligula faucibus auctor. Nam at rhoncus sapien. Curabitur tincidunt hendrerit sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam in arcu quis risus imperdiet tincidunt.</p>
 
-        <div class="container col-sm-6 indexBlocksContainer">
+        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
             <div class="indexBlocks col-md-6" style="background-color: cadetblue">
                 <h2>Accomodations</h2>
                 <img class="indexPic" id="accomodationsPic" src="~/Content/images/sm_roomInterior_sm_450x300.jpg" alt="Interior of hotel room" />
@@ -48,7 +50,7 @@
             </div>
         </div>
         
-        <div class="container col-sm-6 indexBlocksContainer">
+        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
             <div class="indexBlocks col-md-6" style="background-color: peru">
                 <h2>Activities</h2>
                 <img class="indexPic" id="activititesPic" src="~/Content/images/sm_skiier_450x300.jpg" alt="Woman skiing" />
@@ -56,7 +58,7 @@
             </div>
         </div>
 
-        <div class="container col-sm-6 indexBlocksContainer">
+        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
             <div class="indexBlocks col-md-6" style="background-color: palevioletred">
                 <h2>Shopping</h2>
                 <img class="indexPic" id="offersPic" src="~/Content/images/sm_shop_450x300.jpg" alt="Woman holding sparkler" />
@@ -64,7 +66,7 @@
             </div>
         </div>
 
-        <div class="container col-sm-6 indexBlocksContainer">
+        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
             <div class="indexBlocks col-md-6" style="background-color: goldenrod">
                 <h2>Offers</h2>
                 <img class="indexPic" id="offersPic" src="~/Content/images/sm_sparkler_sm_450x300.jpg" alt="Woman holding sparkler" />
@@ -75,7 +77,16 @@
 
 
 
+    </div>  @*End innerContent Div*@ 
+
+    <div class="sidebar col-lg-2" style="display: none">
+        <p>Sidebar Content</p>
+
     </div>
+    
+
+
+
 </div>
 
 

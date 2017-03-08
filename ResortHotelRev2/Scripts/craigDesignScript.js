@@ -3,7 +3,8 @@
 $(window).on("load", function () {
     if (document.documentElement.clientWidth >= 992) {
         // Move paragraphs outside of colored blocks on large screen sizes
-        $('.indexBlocksContainer').removeClass('col-sm-6').addClass('col-lg-1');
+        //$('.indexBlocksContainer').removeClass('col-sm-6').addClass('col-lg-1');
+        $('.indexBlocksContainer').removeClass('col-sm-6');
         $('.indexBlocks').each(function (index) {
             $(this).children('p').appendTo($(this).parent());
         });
@@ -18,7 +19,8 @@ $(window).on("load", function () {
 $(window).resize(function () {
     // Same as above on window resize
     if (document.documentElement.clientWidth >= 992) {
-        $('.indexBlocksContainer').removeClass('col-sm-6').addClass('col-lg-1');
+        //$('.indexBlocksContainer').removeClass('col-sm-6').addClass('col-lg-1');
+        $('.indexBlocksContainer').removeClass('col-sm-6');
         $('.indexBlocks').each(function (index) {
             $(this).children('p').appendTo($(this).parent());
         });
@@ -39,15 +41,20 @@ $(window).resize(function () {
 
 $(window).on("load", function () {
     // CAROUSEL
-    $('.mySlickCarousel').slick({
-        autoplay: true,
-        dots: false,
-        arrows: false,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear'
-    });
+
+        $('.mySlickCarousel').slick({
+            autoplay: true,
+            pauseOnFocus: false,
+            pauseOnHover: false,
+            dots: false,
+            arrows: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    
+
 
     $('#largeNavbarBox').animate({
         marginLeft: "0px"

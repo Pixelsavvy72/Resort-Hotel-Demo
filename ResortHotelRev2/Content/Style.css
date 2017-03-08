@@ -344,10 +344,10 @@ End Bootstrap Docs
 /*Medium Devices - Desktops 992px and up*/
 @media screen and (min-width: 992px) {
     .body-content {
-        background-color: white;
+        
     }   
 
-    h1 {
+    #hotelName {
         font-family: 'Tangerine', cursive;
         font-size: 6em;
         font-weight: 500;

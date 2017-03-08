@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using ResortHotelRev2.Models.EntityManager;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -54,11 +56,17 @@
                         <li>@Html.ActionLink("Create an account", "SignUp", "Account")</li>
                     }
 
+                    
                     @if (Context.User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Make a Reservation", "Reservation", "Reservation")</li>
                         <li>@Html.ActionLink("View My Reservations", "ViewMyReservations", "Reservation")</li>
                         <li>@Html.ActionLink("Logged in as: " + @Context.User.Identity.Name + ". Sign Out?", "SignOut", "Account")</li>
+                        UserManager userManager = new UserManager();
+                        if (userManager.IsUserInRole(Context.User.Identity.Name , "Admin"))
+                        {
+                            <li>@Html.ActionLink("Admin Control Panel", "AdminOnly", "Home")</li>
+                        };
 
                     }
                 </ul>

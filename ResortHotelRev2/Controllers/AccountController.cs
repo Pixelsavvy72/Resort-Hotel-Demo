@@ -30,6 +30,16 @@ namespace ResortHotelRev2.Controllers
                 if (!userManager.IsLoginNameExist(userSignUpView.LoginName))
                 {
                     userManager.AddUserAccount(userSignUpView);
+                    if (userManager.IsUserInRole(User.Identity.Name, "Admin"))
+                    {
+                        return RedirectToAction("AdminOnly", "Home");
+                    }
+                    else
+                    {
+                        FormsAuthentication.SetAuthCookie(userSignUpView.LoginName, false); //Login from first
+                        return RedirectToAction("Welcome", "Home");
+                    }
+
                     FormsAuthentication.SetAuthCookie(userSignUpView.LoginName, false); //Login from first
                     return RedirectToAction("Welcome", "Home");
 

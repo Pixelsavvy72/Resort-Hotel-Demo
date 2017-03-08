@@ -12,36 +12,43 @@
     <div class="form-horizontal">
 
         <div class="form-group">
-
+            @* Display All Users *@
             <div class="col-md-4">
-                <input type="button" value="Display All Users" class="btn btn-primary btn-lg btn-block" id="displayAllUsersButton" data-url="@Url.Action("ManageUserPartial", "Home")" />
+                <input type="button" value="Display All Users" class="btn btn-primary btn-lg btn-block" 
+                       id="displayAllUsersButton" data-url="@Url.Action("ManageUserPartial", "Home")" />
                 <br />
             </div>
+            @* Seach By Last Name *@
             <div class="col-md-4">
-                <input type="button" value="User Search By Last Name" class="btn btn-primary btn-lg btn-block " id="displayNamedUserButton"  />
+                <input type="button" value="User Search By Last Name" class="btn btn-primary btn-lg btn-block " 
+                       id="displayNamedUserButton"  />
                 <br />
                 <div id="nameHiddenDiv" style="display: none">
                     <input type="text" id="nameSearchField" placeholder="Guest Last Name" class="form-control" />
-                    <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonPostNameSearch" data-url="@Url.Action("ManageUserPartial", "Home")" />
+                    <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonPostNameSearch" 
+                           data-url="@Url.Action("ManageUserPartial", "Home")" />
                  </div>
                 <br />
             </div>
-
+            @* Search By Id Number*@
             <div class="col-md-4">
-                <input type="button" value="User Search By ID Number" class="btn btn-primary btn-lg btn-block " id="displayIdUserButton"  />
+                <input type="button" value="User Search By ID Number" class="btn btn-primary btn-lg btn-block " 
+                       id="displayIdUserButton"  />
                 <br />
                 <div id="idHiddenDiv" style="display:none">
                     <input type="text" id="IdSearchField" placeholder="Guest ID Number" class="form-control" />
-                    <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonPostIdSearch" data-url="@Url.Action("ManageUserPartial", "Home")" />
+                    <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonPostIdSearch" 
+                           data-url="@Url.Action("ManageUserPartial", "Home")" />
                     <br />
                 </div>
             </div>
         </div>
 
         <div class="form-group">
-
+            @* Create New User *@
             <div class="col-md-4">
-                <input type="button" value="Create New User" class="btn btn-primary btn-lg btn-block disabled" id="createUserButton" />
+                <input type="button" value="Create New User" class="btn btn-primary btn-lg btn-block" 
+                       id="createUserButton" data-url="@Url.Action("SignUp", "Account")" />
                 <br />
             </div>
             <div class="col-md-4">
@@ -55,13 +62,10 @@
         </div>
 
     </div>
-
-
 }
 
-<div id="divUserListContainer">
-
-</div>
+<div id="divUserListContainer"></div>
+<div id="divCreateUser"></div>
 
 <script>
     //Get All Users Button
@@ -101,6 +105,20 @@
             var id = $('#IdSearchField').val();
             $.ajax({
                 url: $(this).data('url') + '?id=' + id,
+                type: 'GET',
+                cache: false,
+                success: function (result) {
+                    $('#divUserListContainer').html(result);
+                }
+            });
+            return false;
+        });
+    });
+
+    $(function () {
+        $('#createUserButton').click(function () {
+            $.ajax({
+                url: $(this).data('url'),
                 type: 'GET',
                 cache: false,
                 success: function (result) {

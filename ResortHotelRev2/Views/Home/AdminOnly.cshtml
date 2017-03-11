@@ -51,13 +51,30 @@
                        id="createUserButton" data-url="@Url.Action("SignUp", "Account")" />
                 <br />
             </div>
+            @* Search for Reservation by ID *@
             <div class="col-md-4">
-                <input type="button" value="Search for Reservation" class="btn btn-primary btn-lg btn-block disabled" id="DisplayReservationButton" />
+                <input type="button" value="Search for Reservation" class="btn btn-primary btn-lg btn-block" 
+                       id="displayReservationButton" />
                 <br />
+                <div id="resHiddenDiv" style="display: none;">
+                    <input type="text" id="resSearchField" placeholder="Reservation Number" class="form-control" />
+                    <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonResSearch"
+                           data-url="@Url.Action("FindReservationById", "Reservation")" />
+                    <br />
+                </div>
+
             </div>
+            @* Add Reservation *@
             <div class="col-md-4">
-                <input type="button" value="Add Reservation" class="btn btn-primary btn-lg btn-block disabled" id="makeReservationButton" />
+                <input type="button" value="Add Reservation" class="btn btn-primary btn-lg btn-block" 
+                       id="makeReservationButton" />
                 <br />
+                <div id="makeResHiddenDiv" style="display: none;">
+                    <p>Enter the guest id to which this reservation should be attached.</p>
+                    <input type="text" id="makeResUserIdField" placeholder="Guest Id" class="form-control" />                    
+                    <input type="button" id="makeResUerIdButton" value="Go" class="btn btn-primary btn-sm"
+                           data-url="@Url.Action("Reservation","Reservation")" />
+                </div>
             </div>
         </div>
 
@@ -115,10 +132,44 @@
         });
     });
 
+    //Create User
     $(function () {
         $('#createUserButton').click(function () {
             $.ajax({
                 url: $(this).data('url'),
+                type: 'GET',
+                cache: false,
+                success: function (result) {
+                    $('#divUserListContainer').html(result);
+                }
+            });
+            return false;
+        });
+    });
+
+    //Get Reservation By ID
+    $(function () {
+        $('#buttonResSearch').click(function () {
+            var id = $('#resSearchField').val();
+            $.ajax({
+                url: $(this).data('url') + '?id=' + id,
+                type: 'GET',
+                cache: false,
+                success: function (result) {
+                    $('#divUserListContainer').html(result);
+                }
+            });
+            return false;
+        });
+    });
+
+    //Make Reservation
+    $(function () {
+        $('#makeResUerIdButton').click(function () {
+            var getId = $('#makeResUserIdField').val();
+            var id = parseInt(getId);
+            $.ajax({
+                url: $(this).data('url') + '?id=' + id,
                 type: 'GET',
                 cache: false,
                 success: function (result) {
@@ -141,6 +192,11 @@
             $('#buttonPostIdSearch').click();
     });
 
+    $('#resHiddenDiv').keypress(function (e) {
+        if (e.keyCode == 13)
+            $('#buttonResSearch').click();
+    });
+
     //Display hidden fields on button click
 
     $(function () {
@@ -152,6 +208,18 @@
     $(function () {
         $('#displayIdUserButton').click(function () {
             $("#idHiddenDiv").fadeToggle(200)
+        });
+    });
+
+    $(function () {
+        $('#displayReservationButton').click(function () {
+            $("#resHiddenDiv").fadeToggle(200)
+        });
+    });
+
+    $(function () {
+        $('#makeReservationButton').click(function () {
+            $("#makeResHiddenDiv").fadeToggle(200)
         });
     });
 

@@ -35,5 +35,7 @@ namespace ResortHotelRev2.Models.DB
         public virtual DbSet<SYSUserProfile> SYSUserProfiles { get; set; }
         public virtual DbSet<SYSGuestToRoomTable> SYSGuestToRoomTables { get; set; }
         public virtual DbSet<SYSReservationTable> SYSReservationTables { get; set; }
+
+        public System.Data.Entity.DbSet<ResortHotelRev2.Models.ViewModel.RoomAndReservationModel> RoomAndReservationModels { get; set; }
     }
 }

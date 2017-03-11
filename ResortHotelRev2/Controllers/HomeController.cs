@@ -85,7 +85,7 @@ namespace ResortHotelRev2.Controllers
             }
 
             return RedirectToAction("Index", "Home");
-        }
+        } //END MANAGE USER PARTIAL
 
         [AuthorizeRoles("Admin")]
         public ActionResult UpdateUserData(int userID, string loginName, string password, string firstName, string lastName, string phone, string email, string userNotes, int roleID = 0)        
@@ -107,7 +107,7 @@ namespace ResortHotelRev2.Controllers
             UM.UpdateUserAccount(userProfileView);
 
             return Json(new { success = true });
-        }
+        } //END UPDATE USER DATA
 
         [AuthorizeRoles("Admin")]
         public ActionResult DeleteUser(int userID)
@@ -144,7 +144,27 @@ namespace ResortHotelRev2.Controllers
             }
 
             return View(profile);
+        }//END EDIT PROFILE
+
+
+        //STATIC HTML PAGES FOLLOW
+
+        public ActionResult Accomodations()
+        {
+            return View();
         }
+
+        public ActionResult Activities()
+        {
+            return View();
+        }
+
+        public ActionResult Access()
+        {
+            return View();
+        }
+
+
 
     }
 }

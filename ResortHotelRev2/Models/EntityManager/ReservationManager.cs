@@ -52,7 +52,7 @@ namespace ResortHotelRev2.Models.EntityManager
 
         public List<RoomAndReservationModel> GetMyReservations(int userId) 
         {
-            //TODO: Model after GetAllUserProfiles
+
             List<int> myReservationIds = new List<int>();
             List<RoomAndReservationModel> myReservationsInfo = new List<RoomAndReservationModel>();
             ResortDBEntities db = new ResortDBEntities();
@@ -82,14 +82,32 @@ namespace ResortHotelRev2.Models.EntityManager
                 myReservationsInfo.Add(roomResModel);
             }
 
-            
-
-
-
-
-
-
             return myReservationsInfo;
+        } //End GetMyReservations
+
+        public RoomAndReservationModel FindReservationById(int resId)  
+        {
+            ResortDBEntities db = new ResortDBEntities();
+            RoomAndReservationModel selectedReservation = new RoomAndReservationModel();
+                        
+            var reservationTableProfile = db.SYSReservationTables.Find(resId);
+            
+            selectedReservation.CheckIn = reservationTableProfile.DateIN;
+            selectedReservation.CheckOut = reservationTableProfile.DateOUT;
+            selectedReservation.DatePlaced = reservationTableProfile.ReservationPlaced;
+            selectedReservation.GuestId = (int) reservationTableProfile.ReservedByUserId;
+
+            
+            int guestId = (int) reservationTableProfile.ReservedByUserId;
+            var guestInfo = db.SYSUserProfiles.Find(guestId);
+
+            selectedReservation.LastName = guestInfo.LastName;
+            selectedReservation.FirstName = guestInfo.FirstName;
+            selectedReservation.PhoneNumber = guestInfo.PhoneNumber;
+            selectedReservation.Email = guestInfo.Email;
+
+
+            return selectedReservation;
         }
 
         

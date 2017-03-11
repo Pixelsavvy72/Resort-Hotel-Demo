@@ -11,7 +11,8 @@ namespace ResortHotelRev2.Models.DB
 {
     using System;
     using System.Collections.Generic;
-    
+    using ViewModel;
+
     public partial class SYSReservationTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

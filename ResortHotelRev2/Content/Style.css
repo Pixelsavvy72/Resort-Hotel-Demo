@@ -226,6 +226,15 @@ h2 {
     margin-right: auto;
 }
 
+#overlookLogo {
+    display: block;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: -2em;
+    width: 150px;
+    
+}
+
 
 
 
@@ -320,6 +329,7 @@ End Bootstrap Docs
 
     .innerContent {
         padding: 20px 30px 0px 10px;
+        
     }
 
     .indexBlocksContainer {
@@ -347,6 +357,10 @@ End Bootstrap Docs
         
     }   
 
+    .innerContent {
+        margin: auto;
+    }
+
     #hotelName {
         font-family: 'Tangerine', cursive;
         font-size: 6em;
@@ -355,6 +369,11 @@ End Bootstrap Docs
 
     h2 {
         font-size: 2.5em;
+    }
+
+    #introParagraph {
+        font-size: 1.25em;
+        padding: 0 6em 0 6em;
     }
 
 /*NAVBAR ADJUSTMENTS*/
@@ -479,15 +498,24 @@ End Bootstrap Docs
     }   
 
     #introParagraph {
-        padding: 0 10em 0 10em;
+        padding: 0 6em 0 6em;
+    }
+
+    #overlookLogo {
+       
+        width: 15%;
     }
 
     .sidebar {
         display: unset !important;
         height: 100vh;
-        margin-top: 15em;
-        background-color: rgba(63,127,191, 0.5);
+        margin-top: 2em;
+        padding: 0;
+       
+    }
 
+    .sidebar img {
+        height: 100vh;
     }
 
 

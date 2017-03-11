@@ -12,12 +12,12 @@ namespace ResortHotelRev2.Controllers
 {
     public class ReservationController : Controller
     {
-        
-        // GET: Reservation
-        
-        public ActionResult Reservation()
-        {
 
+        // GET: Reservation
+
+        public ActionResult Reservation(int id = 0)
+        {
+            TempData["AdminControlUserId"] = id;
             return View();
         }
         
@@ -94,14 +94,32 @@ namespace ResortHotelRev2.Controllers
                     return RedirectToAction("Reservation", "Reservation");
                 }
 
-                RoomResModel.RoomResRmProfile = RoomsSelectedList;
-                RoomResModel.GuestId = userProfileView.SYSUserID;
-                RoomResModel.FirstName = userProfileView.FirstName;
-                RoomResModel.LastName = userProfileView.LastName;
-                RoomResModel.PhoneNumber = userProfileView.PhoneNumber;
-                //TODO: All rooms on one reservation currently must have same dates. Think about adjusting this in future.
-                RoomResModel.CheckIn = RoomsSelectedList[0].CheckIn;
-                RoomResModel.CheckOut = RoomsSelectedList[0].CheckOut;
+                if (userManager.IsUserInRole(loginName, "admin"))
+                {
+                    
+                    int id = (int) TempData["AdminControlUserId"];
+                    UserProfileView adminSuppliedUser = userManager.GetUserProfile(id);
+                    RoomResModel.RoomResRmProfile = RoomsSelectedList;
+                    RoomResModel.GuestId = adminSuppliedUser.SYSUserID;
+                    RoomResModel.FirstName = adminSuppliedUser.FirstName;
+                    RoomResModel.LastName = adminSuppliedUser.LastName;
+                    RoomResModel.PhoneNumber = adminSuppliedUser.PhoneNumber;
+                    //TODO: All rooms on one reservation currently must have same dates. Think about adjusting this in future.
+                    RoomResModel.CheckIn = RoomsSelectedList[0].CheckIn;
+                    RoomResModel.CheckOut = RoomsSelectedList[0].CheckOut;
+                }
+                else
+                {
+                    RoomResModel.RoomResRmProfile = RoomsSelectedList;
+                    RoomResModel.GuestId = userProfileView.SYSUserID;
+                    RoomResModel.FirstName = userProfileView.FirstName;
+                    RoomResModel.LastName = userProfileView.LastName;
+                    RoomResModel.PhoneNumber = userProfileView.PhoneNumber;
+                    //TODO: All rooms on one reservation currently must have same dates. Think about adjusting this in future.
+                    RoomResModel.CheckIn = RoomsSelectedList[0].CheckIn;
+                    RoomResModel.CheckOut = RoomsSelectedList[0].CheckOut;
+                }
+
 
                 if (User.Identity.IsAuthenticated)
                 {
@@ -151,6 +169,17 @@ namespace ResortHotelRev2.Controllers
 
 
             return View(myReservations);
+        }
+
+        [Authorize]
+        public ActionResult FindReservationById(int id)
+        {
+            ReservationManager reservationManager = new ReservationManager();
+            RoomAndReservationModel selectedReservation = reservationManager.FindReservationById(id);
+
+            return View(selectedReservation);
+
+            
         }
 
         

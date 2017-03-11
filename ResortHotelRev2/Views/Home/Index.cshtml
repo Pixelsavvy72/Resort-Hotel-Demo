@@ -26,7 +26,7 @@
         <p id="largeNavbarMenuText" style="color: rgba(0,0,0,0.0);">Menu</p>    
         <ul style="list-style: none">        
             <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Reservation", "Reservation")">Reservation</a></li>
-            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="#">Accomodations</a></li>
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Accomodations", "Home")">Accomodations</a></li>
             <li class="col-md-12 largeNavbarItems" style="display: none"><a href="#">Activities</a></li>
             <li class="col-md-12 largeNavbarItems" style="display: none"><a href="#">Access</a></li>
         </ul>
@@ -35,7 +35,7 @@
 
 
     @* BODY CONTENT *@
-    <div class="container innerContent col-md-12 col-lg-10" id="innerContent">
+    <div class="container innerContent col-lg-10" id="innerContent">
 
         <h1 class="col-lg-12" id="hotelName">The Overlook Resort Hotel</h1>
 
@@ -78,9 +78,10 @@
 
 
     </div>  @*End innerContent Div*@ 
+    <img class="img col-lg-2" id="overlookLogo" src="~/Content/images/sm_logoOverlook_white.jpg" alt="Logo of Overlook Hotel" />
 
     <div class="sidebar col-lg-2" style="display: none">
-        <p>Sidebar Content</p>
+        <img class="img img-responsive" src="~/Content/images/skiJump.jpg" />
 
     </div>
     

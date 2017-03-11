@@ -131,7 +131,6 @@
     <Content Include="App_Data\ResortDB_log.ldf">
       <DependentUpon>ResortDB.mdf</DependentUpon>
     </Content>
-    <Content Include="BackupTest\HtmlPage1.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -157,6 +156,7 @@
     <Content Include="Content\slick-1.6.0\slick\slick.js" />
     <Content Include="Content\slick-1.6.0\slick\slick.min.js" />
     <Content Include="Content\Style.css" />
+    <Content Include="Content\StyleSecondaryPages.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -359,6 +359,10 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Reservation\ViewMyReservations.cshtml" />
     <Content Include="Views\Reservation\MustLogin.cshtml" />
+    <Content Include="Views\Reservation\FindReservationById.cshtml" />
+    <Content Include="Views\Home\Accomodations.cshtml" />
+    <Content Include="Views\Home\Activities.cshtml" />
+    <Content Include="Views\Home\Access.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

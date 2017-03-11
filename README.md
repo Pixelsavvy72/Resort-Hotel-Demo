@@ -29,7 +29,7 @@ This program is an in-progress hotel reservation system. It allows for the creat
 - [ ] Add reset password functionality.
 - [ ] Allow users to delete their own account.
 - [ ] Allow for cancellation of part of a reservation (ex: 1 room of a 3 room reservation)
-- [ ] Finish Admin Control Panel – Create New User, Search for Reservation, Add Reservation, Search by phone number.
+- [ ] Finish Admin Control Panel – ~~Create New User~~ (Done), Search for Reservation, Add Reservation, Search by phone number.
 - [ ] Format phone numbers throughout based on user’s country of residence
 - [ ] Add more validation and try-catch throughout.
 - [ ] Figure out why custom MVC annotation validation isn’t working in partial-view.
@@ -42,7 +42,7 @@ This program is an in-progress hotel reservation system. It allows for the creat
 - [ ] Think about Ajaxifying the login-dropdown.
 - [ ] Add special notifications to large size pages. Sidebar? Drop-in?
 - [ ] Choose better fonts
-- [ ] Choose better colors for indexBlocks.
+- [x] Choose better colors for indexBlocks.
 - [ ] Design secondary pages
 
 ## Database Table Explanation 

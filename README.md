@@ -10,13 +10,13 @@ This program is an in-progress hotel reservation system. It allows for the creat
 - Edit user profile information: Available to users after login, or admins from the Admin Control Panel. 
 - Delete user: Available to Admin from Admin Control Panel.
 - Assign roles (member / admin) to accounts.
-- Search from within Admin Control Panel. Display all users, Search by last name, search by User Id.
+- Search from within Admin Control Panel. Display all users, Search by last name, search by User Id, search by reservation number.
 
 **Reservations**
 - Search for available rooms by date range using dual JavaScript calendars.
 - Select room or rooms to reserve and add to reservation.
 - Persist reservation and related data to various database tables (see below).
-- Reservation is assigned to User
+- Reservation is assigned to User. User created reservations are assigned to that user. Admin created reservations are assigned to selected guest Id.
 - Rooms are made unavailable for those dates.
 
 ## Backend To-Dos:
@@ -61,4 +61,4 @@ This program is an in-progress hotel reservation system. It allows for the creat
 
 ## Notes
 
-Big hat-tip to user Vincent Durano for his information and examples on account creation.
+Hat-tip to user Vincent Durano for his information and examples on account creation.

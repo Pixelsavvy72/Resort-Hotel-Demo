@@ -6,31 +6,31 @@
 <div class="container-fluid" id="innerContentContainer">
 
     @*Carousel*@
-        <div class="container-fluid row" id="carouselContainer">
-            <div class="row">
+    <div class="container-fluid row" id="carouselContainer">
+        <div class="row">
 
-                <div class="mySlickCarousel">
-                    <div><img class="img-responsive" src="~/Content/images/overlookHotel_1920x1280.jpg" alt="Its really the Stanley Hotel" /></div>
-                    <div><img class="img-responsive" src="~/Content/images/mountain_1920x1280.jpg" alt="Misty mountain" /></div>
-                    <div><img class="img-responsive" src="~/Content/images/pillows_1920x1280.jpg" alt="Pillows on hotel bed" /></div>
-                    <div><img class="img-responsive" src="~/Content/images/skiier_1920x1280.jpg" alt="Woman skiing" /></div>
-                    <div><img class="img-responsive" src="~/Content/images/hotelCafe_1920x1280.jpg" alt="Barista in hotel cafe" /></div>
-                </div>
+            <div class="mySlickCarousel">
+                <div><img class="img-responsive" src="~/Content/images/overlookHotel_1920x1280.jpg" alt="Its really the Stanley Hotel" /></div>
+                <div><img class="img-responsive" src="~/Content/images/mountain_1920x1280.jpg" alt="Misty mountain" /></div>
+                <div><img class="img-responsive" src="~/Content/images/pillows_1920x1280.jpg" alt="Pillows on hotel bed" /></div>
+                <div><img class="img-responsive" src="~/Content/images/skiier_1920x1280.jpg" alt="Woman skiing" /></div>
+                <div><img class="img-responsive" src="~/Content/images/hotelCafe_1920x1280.jpg" alt="Barista in hotel cafe" /></div>
             </div>
-            <div class="myBoxShadow"></div>
         </div>
-
-    @* SECONDARY NAVIGATION for M, L, XL screens *@
-
-    <div class="container-fluid" id="largeNavbarBox" >
-        <p id="largeNavbarMenuText" style="color: rgba(0,0,0,0.0);">Menu</p>    
-        <ul style="list-style: none">        
-            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Reservation", "Reservation")">Reservation</a></li>
-            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Accomodations", "Home")">Accomodations</a></li>
-            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="#">Activities</a></li>
-            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="#">Access</a></li>
-        </ul>
+        <div class="myBoxShadow"></div>
     </div>
+
+    <div class="container-fluid" id="videoContainer">
+        <video id="myVideo" class="video" autoplay="autoplay" loop="loop" muted="" width="100%" >
+            <source src="~/Content/images/hotelVideo2.mp4" type="video/mp4" />
+        </video>
+        
+    </div>
+
+    
+
+
+
 
 
 
@@ -43,44 +43,94 @@
         <p class="col-lg-12" style="padding-bottom: 1em;" id="introParagraph">Phasellus non consequat turpis. Donec a velit id ligula faucibus auctor. Nam at rhoncus sapien. Curabitur tincidunt hendrerit sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam in arcu quis risus imperdiet tincidunt.</p>
 
         <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
-            <div class="indexBlocks col-md-6" style="background-color: cadetblue">
-                <h2>Accomodations</h2>
-                <img class="indexPic" id="accomodationsPic" src="~/Content/images/sm_roomInterior_sm_450x300.jpg" alt="Interior of hotel room" />
-                <p class="col-md-6">Donec at ligula lobortis, semper velit in, pellentesque turpis. Nullam porttitor vestibulum est eget convallis.</p>
-            </div>
+            <a href="@Url.Action("Accomodations", "Home")">
+                <div class="indexBlocks col-md-6" style="background-color: cadetblue">
+                    <h2>Accomodations</h2>
+                    <img class="indexPic" id="accomodationsPic" src="~/Content/images/sm_roomInterior_sm_450x300.jpg" alt="Interior of hotel room" />
+                    <p class="col-md-6">Donec at ligula lobortis, semper velit in, pellentesque turpis. Nullam porttitor vestibulum est eget convallis.</p>
+                </div>
+            </a>
         </div>
         
         <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
-            <div class="indexBlocks col-md-6" style="background-color: peru">
-                <h2>Activities</h2>
-                <img class="indexPic" id="activititesPic" src="~/Content/images/sm_skiier_450x300.jpg" alt="Woman skiing" />
-                <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
-            </div>
+            <a href="@Url.Action("Activities", "Home")">
+                <div class="indexBlocks col-md-6" style="background-color: peru">
+                    <h2>Activities</h2>
+                    <img class="indexPic" id="activititesPic" src="~/Content/images/sm_skiier_450x300.jpg" alt="Woman skiing" />
+                    <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
+                </div>
+            </a>
         </div>
 
         <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
-            <div class="indexBlocks col-md-6" style="background-color: palevioletred">
-                <h2>Shopping</h2>
-                <img class="indexPic" id="offersPic" src="~/Content/images/sm_shop_450x300.jpg" alt="Woman holding sparkler" />
-                <p class="col-md-6">Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
-            </div>
+            <a href="@Url.Action("Shopping", "Home")">
+                <div class="indexBlocks col-md-6" style="background-color: palevioletred">
+                    <h2>Shopping</h2>
+                    <img class="indexPic" id="offersPic" src="~/Content/images/sm_shop_450x300.jpg" alt="Open sign in door" />
+                    <p class="col-md-6">Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
+                </div>
+            </a>
         </div>
 
         <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
-            <div class="indexBlocks col-md-6" style="background-color: goldenrod">
-                <h2>Offers</h2>
-                <img class="indexPic" id="offersPic" src="~/Content/images/sm_sparkler_sm_450x300.jpg" alt="Woman holding sparkler" />
-                <p class="col-md-6">Donec mollis justo varius, commodo enim a, venenatis eros. Aenean quis nulla augue. Aenean tempus blandit tellus non hendrerit.</p>
-            </div>
+            <a href="@Url.Action("Offers", "Home")">
+                <div class="indexBlocks col-md-6" style="background-color: goldenrod">
+                    <h2>Offers</h2>
+                    <img class="indexPic" id="offersPic" src="~/Content/images/sm_sparkler_sm_450x300.jpg" alt="Woman holding sparkler" />
+                    <p class="col-md-6">Donec mollis justo varius, commodo enim a, venenatis eros. Aenean quis nulla augue. Aenean tempus blandit tellus non hendrerit.</p>
+                </div>
+            </a>
         </div>
 
+        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
+            <a href="@Url.Action("Restaurant", "Home")">
+                <div class="indexBlocks col-md-6" style="background-color: #b83d14">
+                    <h2>Food &amp; Dining</h2>
+                    <img class="indexPic" id="restaurantPic" src="~/Content/images/foodAndWine2.jpg" alt="Nice meal with wine." />
+                    <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
+                </div>
+            </a>
+        </div>
 
+        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
+            <a href="@Url.Action("Access", "Home")">
+                <div class="indexBlocks col-md-6" style="background-color: #39ac39">
+                    <h2>Access</h2>
+                    <img class="indexPic" id="accessPic" src="~/Content/images/compassMap.jpg" alt="compass and map" />
+                    <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
+                </div>
+            </a>
+        </div>
 
-
+    
     </div>  @*End innerContent Div*@ 
-    <img class="img col-lg-2" id="overlookLogo" src="~/Content/images/sm_logoOverlook_white.jpg" alt="Logo of Overlook Hotel" />
+    <div id="secondaryNavbarPlace"></div>
 
-    <div class="sidebar col-lg-2" style="display: none">
+
+
+
+    <img class="img col-lg-2" id="overlookLogo" src="~/Content/images/sm_logoOverlook_white.png" alt="Logo of Overlook Hotel" />
+    
+    <div class="container sidebar col-lg-2" id="sidebarEvents" style="display: none">
+        <h3>Upcoming Events</h3>
+        <p>
+            <h4>March 5th</h4>
+            Ajax this in from the news pages.
+        </p>
+        <p>
+            <h4>March 7th</h4>
+            Ajax this in from the news pages.
+        </p>
+        <p>
+            <h4>March 9th</h4>
+            Ajax this in from the news pages.
+        </p>
+        
+
+    </div>
+
+    <div class="sidebar col-lg-2" id="sidebarOffers" style="display: none">
+        <h3>Special offers &amp; deals<br />go here</h3>
         <img class="img img-responsive" src="~/Content/images/skiJump.jpg" />
 
     </div>
@@ -91,67 +141,3 @@
 </div>
 
 
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@* OLD BOOTSTRAP CAROUSEL *@
-@*<div class="container-fluid" id="topContainer">
-        <div class="row">
-            <div id="myCarousel" class="carousel slide center-block" data-ride="carousel">
-
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                </ol>
-
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="~/Content/images/overlookHotel_1920x1280.jpg" alt="Its really the Stanley Hotel" />
-                    </div>
-                    <div class="item">
-                        <img src="~/Content/images/mountain_1920x1280.jpg" alt="Misty mountain" />
-                    </div>
-
-                    <div class="item">
-                        <img src="~/Content/images/pillows_1920x1280.jpg" alt="Pillows on hotel bed" />
-                    </div>
-
-                    <div class="item">
-                        <img src="~/Content/images/skiier_1920x1280.jpg" alt="Woman skiing" />
-                    </div>
-
-                    <div class="item">
-                        <img src="~/Content/images/hotelCafe_1920x1280.jpg" alt="Barista in hotel cafe" />
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        <div class="myBoxShadow"></div>
-    </div>*@

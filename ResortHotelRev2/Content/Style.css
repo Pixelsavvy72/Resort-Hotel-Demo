@@ -1,11 +1,12 @@
 ﻿/* xs devices */
 body {
-    
+        
 }
 
 
 #body-content {
-
+    /*height: 100vh;
+    max-height: 100%;*/
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.125em;
     padding: 0 0 50px 0;
@@ -13,16 +14,17 @@ body {
     
 }   
 
-
-.innerContent {
-    padding: 20px 10px 0px 10px;
+.indexBlocksContainer a {
+    color: inherit;
+    text-decoration: none;
 }
 
 
+.innerContent { padding: 20px 10px 0px 10px; }
 
-#largeNavbarBox {
-    display: none;
-}
+
+
+#largeNavbarBox { display: none; }
 
 
 .navbar-header {
@@ -38,10 +40,7 @@ body {
 
 }
 
-.navbar-container {
-    
-    width: 100%;
-}
+.navbar-container { width: 100%; }
 
 .navbar-collapse {
     background-color: rgba(255,255,255,0.5);
@@ -57,24 +56,17 @@ body {
     background-color: #400000;
     margin: 10px;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-
-   
+    font-weight: 600;   
 }
 
-.navbar hr {
-    display: none;
-}
+.navbar hr { display: none; }
 
 .navbar-brand {
     font-family: 'Open Sans', sans-serif;
     background-color: #400000;
 }
 
-#loginLinks {
-    display: none;
-
-}
+#loginLinks { display: none; }
 
 #accountButton {
     border: none;
@@ -94,9 +86,11 @@ body {
 #loginPage {
     background-color: rgba(0,0,0,0.0);
     margin: 10px;
-    font-weight: 600;
-   
+    font-weight: 600;   
 }
+
+#loginPage > #largeNavbarBox { display: none; }
+
 
 #loginButton {
     background-color: #400000;
@@ -105,17 +99,11 @@ body {
     font-weight: 600;
 }
 
-#loginPage footer {
-    display: none;
-}
+#loginPage footer { display: none; }
 
-#loginPage h2 {
-    display: none;
-}
+#loginPage h2 { display: none; }
 
-.loginLabel {
-    display: none;
-}
+.loginLabel { display: none; }
 
 h1 {
     
@@ -132,35 +120,15 @@ h2 {
 
 /*CAROUSEL*/
 
-.mySlickCarousel img {
-    width: 100%
-}
+#videoContainer { display: none; }
+
+.mySlickCarousel img { width: 100% }
 
 #carouselContainer {
     padding: 0;
     margin: 0;
 
 }
-
-/*OLD BOOTSTRAP CAROUSEL*/
-/*#carouselContainer {
-    padding: 0px;
-    margin-bottom: -40px;
-    
-}
-
-#myCarousel {
-    z-index: 2;
-    position: relative;
-}
-
-#myCarousel img {
-    min-width: 100%;
-}
-
-.carousel-indicators li { 
-    visibility: hidden; 
-}*/
 
 .myBoxShadow {
     
@@ -234,6 +202,7 @@ h2 {
     width: 150px;
     
 }
+
 
 
 
@@ -327,39 +296,43 @@ End Bootstrap Docs
     }
 
 
-    .innerContent {
-        padding: 20px 30px 0px 10px;
-        
-    }
+    .innerContent { padding: 20px 30px 0px 10px; }
 
     .indexBlocksContainer {
         padding: 0;
         margin: 0;
     }
 
-    .indexBlocks {
-        padding: 5px 0 20px 0;
-    }
+    .indexBlocks { padding: 5px 0 20px 0; }
 
-    .indexBlocks > p {
-        height: 100px;
-    }
+    .indexBlocks > p { height: 100px; }
 
-    #secondaryNavbarHeader .nav {
-        float: none;
-    }
+    #secondaryNavbarHeader .nav { float: none; }
 
 }
 
 /*Medium Devices - Desktops 992px and up*/
 @media screen and (min-width: 992px) {
-    .body-content {
-        
-    }   
+    html, body {
+        height: 100%;
+        background-image: url('images/MiscImages/paperCrumpledLight.jpg');
 
-    .innerContent {
-        margin: auto;
     }
+
+    #carouselContainer { display: none; }
+
+    #videoContainer {
+        display: unset; 
+        margin-left: -1em;
+        margin-right: -1em;
+        padding: 0;
+    }
+
+    #myVideo { box-shadow: 0 10px 10px rgba(0,0,0,0.6) }
+
+    #loginPage > .body-content { background-image: none; }
+
+    .innerContent { margin: auto; }
 
     #hotelName {
         font-family: 'Tangerine', cursive;
@@ -367,9 +340,7 @@ End Bootstrap Docs
         font-weight: 500;
     }
 
-    h2 {
-        font-size: 2.5em;
-    }
+    h2 { font-size: 2.5em; }
 
     #introParagraph {
         font-size: 1.25em;
@@ -378,22 +349,18 @@ End Bootstrap Docs
 
 /*NAVBAR ADJUSTMENTS*/
 
-    .navbar-collapse {
-        width: 30%
-    }
+    .navbar-collapse { width: 30% }
 
-    #secondaryNavbar {
-        display: none;
-
-    }
+    #secondaryNavbar { display: none; }
 
 /*SIDE MENU NAVBAR*/
 
     #largeNavbarBox {  
         display:unset;   
         background-color: rgba(0,0,0,0.7);
-        width: 20%;        
-        position: absolute;
+        width: 20%; 
+        max-width: 235px;       
+        position: fixed;
         top: 100px;
         margin-left: -300px;
         float: left;
@@ -409,14 +376,18 @@ End Bootstrap Docs
 
     }
 
+    
+
     /*TODO: Fix for no javascript browsers*/
     .largeNavbarItems {        
         opacity: 0;
         font-size: 1.5em;
-        line-height: 3em;
-        
+        line-height: 3em;      
         
     }
+
+    .largeNavbarItems:hover { font-style: italic; }
+
     .largeNavbarItems a {
         color: white;
         font-family: 'Open Sans', sans-serif;
@@ -425,12 +396,12 @@ End Bootstrap Docs
         
     }
 
+
 /*INDEX PAGE BLOCK ITEMS*/
 
     .indexBlocksContainer {
         padding: 0;
-        align-items: center;
-
+        align-items: center;        
     }
 
     .indexBlocks {
@@ -438,13 +409,15 @@ End Bootstrap Docs
         width: 400px;
         margin-bottom: 50px;
         padding-bottom: 3em;
+        box-shadow: 5px 5px rgba(0,0,0,.5)
 
        
     }
 
     .indexBlocks img {
         width: 200px;
-        height: 200px
+        height: 200px;
+        border: 5px solid white;
     }
 
     .indexBlocks h2 {
@@ -462,28 +435,37 @@ End Bootstrap Docs
     }
 
    
-    .indexBlocksContainer:nth-child(even) p {
+    .indexBlocksContainer:nth-child(even) p { float: right; }
+
+    .indexBlocksContainer:nth-child(odd) p { float: left; }
+
+    .indexBlocksContainer:nth-child(even) .indexBlocks { float: right; }
+
+    .indexBlocksContainer:nth-child(odd) .indexBlocks { float: left; }
+
+    /* ADMIN CONTROL PANEL */
+
+
+    .backPanel {
+        margin-top: 3em;
+        background-color: white;
+        border-color: cadetblue;
+        border-style: solid;
+        border-radius: 30px;
+        padding: 2em;
+
         
-        float: right;
-
     }
 
-    .indexBlocksContainer:nth-child(odd) p {
+    #divShowData > .body-content { background-image: none; }
 
-        float: left;
+    #divShowData footer { display: none; }
 
-    }
+    #divShowData #largeNavbarBox {display: none;}
 
-    .indexBlocksContainer:nth-child(even) .indexBlocks {
-        float: right;
+    #returnToHome { display: none;}
 
-    }
 
-    .indexBlocksContainer:nth-child(odd) .indexBlocks {
-        float: left;
-
-    }
-   
 
 }
 
@@ -497,31 +479,59 @@ End Bootstrap Docs
         padding-right: 3em;
     }   
 
-    #introParagraph {
-        padding: 0 6em 0 6em;
-    }
+    #introParagraph { padding: 0 6em 0 6em; }
 
-    #overlookLogo {
-       
-        width: 15%;
-    }
+    #overlookLogo { width: 15%; }
 
     .sidebar {
         display: unset !important;
-        height: 100vh;
         margin-top: 2em;
-        padding: 0;
        
     }
 
-    .sidebar img {
-        height: 100vh;
+    #sidebarEvents {
+        /*Change to max-height once event pages are ajaxified*/
+        height: 30%;
+        padding: 1em;
+        color: black;
+        background-image: url('images/MiscImages/woodRepeatTextureRd.jpg');
+        border: 7px solid #400000;
+        border-radius: 15px;
+        box-shadow: 7px 7px 10px rgba(0,0,0,0.7);
     }
+
+    #sidebarOffers {
+        height: 100vh;
+        padding: 0;
+
+    }
+
+    #sidebarOffers img { 
+        height: 100vh;
+        width: 100%;
+
+    }
+
+    #sidebarOffers h3 {
+        line-height: 1.25em;
+        font-size: 3em;
+        text-align: center;
+        color: gray;
+        font-family: Tahoma;
+        position: absolute;
+    }
+
+    
 
 
     .mySlickCarousel img {
         width: 100vw;
         height: 100vh;
+    }
+
+    .backPanel {
+        padding-right: 0;
+        padding-left: 4em;
     }
 
 }

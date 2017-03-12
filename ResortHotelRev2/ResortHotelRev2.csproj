@@ -135,15 +135,28 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\compassMap.jpg" />
+    <Content Include="Content\images\foodAndWine.jpg" />
+    <Content Include="Content\images\foodAndWine2.jpg" />
     <Content Include="Content\images\hotelCafe_1920x1280.jpg" />
+    <Content Include="Content\images\hotelVideo2.mp4" />
+    <Content Include="Content\images\MiscImages\banner-header-paper-crumpled-158665.jpg" />
+    <Content Include="Content\images\MiscImages\paperCrumpledLight.jpg" />
+    <Content Include="Content\images\MiscImages\woodRepeatTextureRd.jpg" />
     <Content Include="Content\images\mountain_1920x1280.jpg" />
+    <Content Include="Content\images\overlookHotel_1920x1280.jpg" />
     <Content Include="Content\images\pillows_1920x1280.jpg" />
     <Content Include="Content\images\RoomPics\Classic-King_176_120_s.jpg" />
     <Content Include="Content\images\RoomPics\Deluxe-King-Room_160_120_s.jpg" />
     <Content Include="Content\images\RoomPics\lodge-room_160_120_s.jpg" />
+    <Content Include="Content\images\RoomPics\slippersCouch.jpg" />
     <Content Include="Content\images\RoomPics\Superior-King1_182_120_s.jpg" />
     <Content Include="Content\images\skiier_1920x1280.jpg" />
+    <Content Include="Content\images\skiJump.jpg" />
+    <Content Include="Content\images\sm_logoOverlook_white.jpg" />
+    <Content Include="Content\images\sm_logoOverlook_white.png" />
     <Content Include="Content\images\sm_roomInterior_sm_450x300.jpg" />
+    <Content Include="Content\images\sm_shop_450x300.jpg" />
     <Content Include="Content\images\sm_skiier_450x300.jpg" />
     <Content Include="Content\images\sm_sparkler_sm_450x300.jpg" />
     <Content Include="Content\Site.css" />
@@ -363,6 +376,9 @@
     <Content Include="Views\Home\Accomodations.cshtml" />
     <Content Include="Views\Home\Activities.cshtml" />
     <Content Include="Views\Home\Access.cshtml" />
+    <Content Include="Views\Home\Shopping.cshtml" />
+    <Content Include="Views\Home\Offers.cshtml" />
+    <Content Include="Views\Home\Restaurant.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

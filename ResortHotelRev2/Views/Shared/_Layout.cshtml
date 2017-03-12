@@ -87,7 +87,7 @@
     </div>
     
 
-    @* Secondary Navbar - Small Window Size*@
+    @* Secondary Navbar - XS and Small Window Size*@
     <div class="navbar navbar-default navbar-fixed-bottom" id="secondaryNavbar" role="navigation"> 
         <div class="navbar-header" id="secondaryNavbarHeader">
 
@@ -100,6 +100,21 @@
             </ul>
         </div>
     </div>
+
+    @* Secondary Navbar - M, L Window Size*@
+
+    <div class="container-fluid" id="largeNavbarBox">
+        <p id="largeNavbarMenuText" style="color: rgba(0,0,0,0.0);">Menu</p>
+        <ul style="list-style: none">
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Reservation", "Reservation")">Reservation</a></li>
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Accomodations", "Home")">Accomodations</a></li>
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Activities", "Home")">Activities</a></li>
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Shopping", "Home")">Shopping</a></li>
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Offers", "Home")">Offers</a></li>
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Restaurant", "Home")">Food &amp; Dining</a></li>
+            <li class="col-md-12 largeNavbarItems" style="display: none"><a href="@Url.Action("Access", "Home")">Access</a></li>
+        </ul>
+    </div>
    
 
 
@@ -108,12 +123,15 @@
     <script type="text/javascript">
         $(document).ready(function () {
 	
-
+            
             //Loads the login partial page
             var loginPageOpen = false;
             $('#loginButton').one("click", function () {
-                $('#loginPage').load('@Url.Action("Login", "Account")');
+                $('#loginPage').load('@Url.Action("Login", "Account")');                
                 loginPageOpen = true;
+
+                
+                
 
                 //Closes login partial page if user clicks outside of the container.
                 $(document).click(function (e) {
@@ -136,24 +154,9 @@
                         }
                     }
                 })
-
+                
             }); //END login page setup
-
-            //if (document.documentElement.clientWidth >= 992) {
-            //    $('#secondaryNavbar').removeClass('navbar-fixed-bottom').prependTo('#body-content');
-            //    $('#myAcctText').show();
-            //}
-
-            //$(window).resize(function () {
-            //    if (document.documentElement.clientWidth >= 992) {
-            //        $('#secondaryNavbar').removeClass('navbar-fixed-bottom').appendTo('#primaryNavbar');
-            //        $('#myAcctText').show();
-            //    }
-            //    else {
-            //        $('#secondaryNavbar').addClass('navbar-fixed-bottom');
-            //        $('#myAcctText').hide();
-            //    }
-            //})
+            $('#loginPage .innerContent').removeClass('backPanel');
 
 
     });

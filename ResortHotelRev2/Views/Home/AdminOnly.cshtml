@@ -3,86 +3,91 @@
  
 }
 
-<h2>Admin Control Panel</h2>  
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken();
 
-    <div class="form-horizontal">
 
-        <div class="form-group">
-            @* Display All Users *@
-            <div class="col-md-4">
-                <input type="button" value="Display All Users" class="btn btn-primary btn-lg btn-block" 
-                       id="displayAllUsersButton" data-url="@Url.Action("ManageUserPartial", "Home")" />
-                <br />
-            </div>
-            @* Seach By Last Name *@
-            <div class="col-md-4">
-                <input type="button" value="User Search By Last Name" class="btn btn-primary btn-lg btn-block " 
-                       id="displayNamedUserButton"  />
-                <br />
-                <div id="nameHiddenDiv" style="display: none">
-                    <input type="text" id="nameSearchField" placeholder="Guest Last Name" class="form-control" />
-                    <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonPostNameSearch" 
-                           data-url="@Url.Action("ManageUserPartial", "Home")" />
-                 </div>
-                <br />
-            </div>
-            @* Search By Id Number*@
-            <div class="col-md-4">
-                <input type="button" value="User Search By ID Number" class="btn btn-primary btn-lg btn-block " 
-                       id="displayIdUserButton"  />
-                <br />
-                <div id="idHiddenDiv" style="display:none">
-                    <input type="text" id="IdSearchField" placeholder="Guest ID Number" class="form-control" />
-                    <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonPostIdSearch" 
-                           data-url="@Url.Action("ManageUserPartial", "Home")" />
+<div class="container backPanel">
+    <h2>Admin Control Panel</h2><br />  
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken();
+
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                @* Display All Users *@
+                <div class="col-md-4">
+                    <input type="button" value="Display All Users" class="btn btn-primary btn-lg btn-block"
+                           id="displayAllUsersButton" data-url="@Url.Action("ManageUserPartial", "Home")" />
                     <br />
                 </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @* Create New User *@
-            <div class="col-md-4">
-                <input type="button" value="Create New User" class="btn btn-primary btn-lg btn-block" 
-                       id="createUserButton" data-url="@Url.Action("SignUp", "Account")" />
-                <br />
-            </div>
-            @* Search for Reservation by ID *@
-            <div class="col-md-4">
-                <input type="button" value="Search for Reservation" class="btn btn-primary btn-lg btn-block" 
-                       id="displayReservationButton" />
-                <br />
-                <div id="resHiddenDiv" style="display: none;">
-                    <input type="text" id="resSearchField" placeholder="Reservation Number" class="form-control" />
-                    <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonResSearch"
-                           data-url="@Url.Action("FindReservationById", "Reservation")" />
+                @* Seach By Last Name *@
+                <div class="col-md-4">
+                    <input type="button" value="User Search By Last Name" class="btn btn-primary btn-lg btn-block "
+                           id="displayNamedUserButton" />
+                    <br />
+                    <div id="nameHiddenDiv" style="display: none">
+                        <input type="text" id="nameSearchField" placeholder="Guest Last Name" class="form-control" />
+                        <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonPostNameSearch"
+                               data-url="@Url.Action("ManageUserPartial", "Home")" />
+                    </div>
                     <br />
                 </div>
-
-            </div>
-            @* Add Reservation *@
-            <div class="col-md-4">
-                <input type="button" value="Add Reservation" class="btn btn-primary btn-lg btn-block" 
-                       id="makeReservationButton" />
-                <br />
-                <div id="makeResHiddenDiv" style="display: none;">
-                    <p>Enter the guest id to which this reservation should be attached.</p>
-                    <input type="text" id="makeResUserIdField" placeholder="Guest Id" class="form-control" />                    
-                    <input type="button" id="makeResUerIdButton" value="Go" class="btn btn-primary btn-sm"
-                           data-url="@Url.Action("Reservation","Reservation")" />
+                @* Search By Id Number*@
+                <div class="col-md-4">
+                    <input type="button" value="User Search By ID Number" class="btn btn-primary btn-lg btn-block "
+                           id="displayIdUserButton" />
+                    <br />
+                    <div id="idHiddenDiv" style="display:none">
+                        <input type="text" id="IdSearchField" placeholder="Guest ID Number" class="form-control" />
+                        <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonPostIdSearch"
+                               data-url="@Url.Action("ManageUserPartial", "Home")" />
+                        <br />
+                    </div>
                 </div>
             </div>
+
+            <div class="form-group">
+                @* Create New User *@
+                <div class="col-md-4">
+                    <input type="button" value="Create New User" class="btn btn-primary btn-lg btn-block"
+                           id="createUserButton" data-url="@Url.Action("SignUp", "Account")" />
+                    <br />
+                </div>
+                @* Search for Reservation by ID *@
+                <div class="col-md-4">
+                    <input type="button" value="Search for Reservation" class="btn btn-primary btn-lg btn-block"
+                           id="displayReservationButton" />
+                    <br />
+                    <div id="resHiddenDiv" style="display: none;">
+                        <input type="text" id="resSearchField" placeholder="Reservation Number" class="form-control" />
+                        <input type="button" value="Go" class="btn btn-primary btn-sm" id="buttonResSearch"
+                               data-url="@Url.Action("FindReservationById", "Reservation")" />
+                        <br />
+                    </div>
+
+                </div>
+                @* Add Reservation *@
+                <div class="col-md-4">
+                    <input type="button" value="Add Reservation" class="btn btn-primary btn-lg btn-block"
+                           id="makeReservationButton" />
+                    <br />
+                    <div id="makeResHiddenDiv" style="display: none;">
+                        <p>Enter the guest id to which this reservation should be attached.</p>
+                        <input type="text" id="makeResUserIdField" placeholder="Guest Id" class="form-control" />
+                        <input type="button" id="makeResUerIdButton" value="Go" class="btn btn-primary btn-sm"
+                               data-url="@Url.Action("Reservation","Reservation")" />
+                    </div>
+                </div>
+            </div>
+
         </div>
+    }
 
-    </div>
-}
+    <div id="divShowData"></div>
 
-<div id="divUserListContainer"></div>
-<div id="divCreateUser"></div>
+</div>
 
 <script>
     //Get All Users Button
@@ -93,7 +98,7 @@
                 type: 'GET',
                 cache: false,
                 success: function(result) {
-                    $('#divUserListContainer').html(result);
+                    $('#divShowData').html(result);
                 }
             });
             return false;
@@ -109,7 +114,7 @@
                 type: 'GET',
                 cache: false,
                 success: function (result) {
-                    $('#divUserListContainer').html(result);
+                    $('#divShowData').html(result);
                 }
             });
             return false;
@@ -119,13 +124,14 @@
     //Get User By User ID
     $(function () {
         $('#buttonPostIdSearch').click(function () {
+            $('#divShowData').html('');
             var id = $('#IdSearchField').val();
             $.ajax({
                 url: $(this).data('url') + '?id=' + id,
                 type: 'GET',
                 cache: false,
                 success: function (result) {
-                    $('#divUserListContainer').html(result);
+                    $('#divShowData').html(result);
                 }
             });
             return false;
@@ -140,7 +146,7 @@
                 type: 'GET',
                 cache: false,
                 success: function (result) {
-                    $('#divUserListContainer').html(result);
+                    $('#divShowData').html(result);
                 }
             });
             return false;
@@ -150,13 +156,14 @@
     //Get Reservation By ID
     $(function () {
         $('#buttonResSearch').click(function () {
+            $('#divShowData').html('');
             var id = $('#resSearchField').val();
             $.ajax({
                 url: $(this).data('url') + '?id=' + id,
                 type: 'GET',
                 cache: false,
                 success: function (result) {
-                    $('#divUserListContainer').html(result);
+                    $('#divShowData').html(result);
                 }
             });
             return false;
@@ -166,6 +173,7 @@
     //Make Reservation
     $(function () {
         $('#makeResUerIdButton').click(function () {
+            $('#divShowData').html('');
             var getId = $('#makeResUserIdField').val();
             var id = parseInt(getId);
             $.ajax({
@@ -173,7 +181,7 @@
                 type: 'GET',
                 cache: false,
                 success: function (result) {
-                    $('#divUserListContainer').html(result);
+                    $('#divShowData').html(result);
                 }
             });
             return false;
@@ -201,24 +209,28 @@
 
     $(function () {
         $('#displayNamedUserButton').click(function () {
+            $('#divShowData').html('');
             $("#nameHiddenDiv").fadeToggle(200);
         });
     });
 
     $(function () {
         $('#displayIdUserButton').click(function () {
+            $('#divShowData').html('');
             $("#idHiddenDiv").fadeToggle(200)
         });
     });
 
     $(function () {
         $('#displayReservationButton').click(function () {
+            $('#divShowData').html('');
             $("#resHiddenDiv").fadeToggle(200)
         });
     });
 
     $(function () {
         $('#makeReservationButton').click(function () {
+            $('#divShowData').html('');
             $("#makeResHiddenDiv").fadeToggle(200)
         });
     });
@@ -227,7 +239,3 @@
 </script>
 
 
-
-
-@Html.ActionLink("Sign Out", "SignOut", "Account") | 
-@Html.ActionLink("Return to Home", "Index", "Home")

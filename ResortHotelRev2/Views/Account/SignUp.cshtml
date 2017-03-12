@@ -4,7 +4,7 @@
     ViewBag.Title = "SignUp";
 
 }
-<div class="innerContent">
+<div class="container innerContent backPanel">
     <h2>Sign Up</h2>
 
     @using (Html.BeginForm())
@@ -72,14 +72,14 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Register" class="btn btn-default" />
+                    <input type="submit" value="Register" class="btn btn-primary" />
                 </div>
             </div>
         </div>
     }
 
     <div>
-        @Html.ActionLink("Back to Main", "Index", "Home")
+        @Html.ActionLink("Back to Home", "Index", "Home", null, htmlAttributes: new { id = "returnToHome"})
     </div>
 </div>
 

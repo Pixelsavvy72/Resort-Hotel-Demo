@@ -159,6 +159,22 @@ namespace ResortHotelRev2.Controllers
             return View();
         }
 
+        public ActionResult Shopping()
+        {
+            return View();
+        }
+
+        public ActionResult Offers()
+        {
+            return View();
+        }
+
+        public ActionResult Restaurant()
+        {
+            return View();
+        }
+
+
         public ActionResult Access()
         {
             return View();

@@ -56,7 +56,7 @@ $(window).on("load", function () {
     
 
 
-    $('#largeNavbarBox').animate({
+        $('#largeNavbarBox').animate({
         marginLeft: "0px"
     }, 1500);
         

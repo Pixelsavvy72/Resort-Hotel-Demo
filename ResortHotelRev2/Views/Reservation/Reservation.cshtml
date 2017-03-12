@@ -33,7 +33,7 @@
 </script>
 
 
-<div id="reservationPageContent">
+<div class="container backPanel" id="reservationPageContent">
     <h2>Reservation</h2>
 
 
@@ -79,7 +79,7 @@
         </div>
 
         <div>
-            @Html.ActionLink("Back to Main", "Index", "Home")
+            @Html.ActionLink("Back to Home", "Index", "Home", null, htmlAttributes: new { id = "returnToHome" })
         </div>
 
 

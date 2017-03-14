@@ -3,11 +3,11 @@
 This program is an in-progress hotel reservation system. It allows for the creation of guests and reservations, assigning rooms and guests to individual reservations, editing, and account management.
 
 **A video displaying functionality** is available at: https://youtu.be/ZQnOxwVN--g
-Video Timestamp Key:
-0:00 Image responsive across multiple breakpoints for phones, tablets, desktops, and large screen desktops.
-3:00 Account creation
-4:24 Place a reservation
-6:15 Admin control panel demonstration
+- Video Timestamp Key:
+- 0:00 Image responsive across multiple breakpoints for phones, tablets, desktops, and large screen desktops.
+- 3:00 Account creation
+- 4:24 Place a reservation
+- 6:15 Admin control panel demonstration
 
 Please note that this is primarily a functionality demo and I'll be fleshing out the design more soon.
 

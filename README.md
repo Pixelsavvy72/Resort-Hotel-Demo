@@ -2,7 +2,7 @@
 
 This program is an in-progress hotel reservation system. It allows for the creation of guests and reservations, assigning rooms and guests to individual reservations, editing, and account management.
 
-A video displaying functionality is available at: https://youtu.be/ZQnOxwVN--g
+**A video displaying functionality** is available at: https://youtu.be/ZQnOxwVN--g
 
 Please note that this is primarily a functionality demo and I'll be fleshing out the design more soon.
 

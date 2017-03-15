@@ -3,6 +3,9 @@ body {
         
 }
 
+.table-condensed tr {
+    background-color: #efe5da;
+}
 
 #body-content {
     /*height: 100vh;
@@ -309,6 +312,47 @@ End Bootstrap Docs
 
     #secondaryNavbarHeader .nav { float: none; }
 
+    #eventsHorizontalContainer { display: unset !important; }
+
+    .eventsContentBody { 
+        display: unset !important;
+        padding: .5em;     
+        
+        
+    }
+
+    .eventsContentBody > div {
+        margin: 2em 1em 2em 1em;
+        color: black;
+        padding: 0 .5em 0 .5em;
+        background-image: url('images/MiscImages/woodRepeatTextureRd.jpg');
+        border: 7px solid #400000;
+        border-radius: 15px;
+        box-shadow: 7px 7px 10px rgba(0,0,0,0.7);
+    }
+    #horizontalPromo {
+        display: unset !important;
+        margin: 2em 0 2em 0;
+        padding: 0;
+
+    }
+
+    #horizontalPromo > img {
+        width: 100%;
+        box-shadow: 5px 5px rgba(0,0,0,.7);
+    }
+
+    #horizontalPromo h3 {
+        line-height: 1.25em;
+        font-size: 2em;
+        text-align: left;
+        color: lightgray;
+        font-family: Tahoma;
+        position: absolute;
+        margin-top: -4em;
+        margin-left: 1em;
+    }
+
 }
 
 /*Medium Devices - Desktops 992px and up*/
@@ -465,7 +509,9 @@ End Bootstrap Docs
 
     #returnToHome { display: none;}
 
-
+    .eventsContentBody > div {
+        margin: 0em 1em 2em 1em;
+    }
 
 }
 
@@ -533,5 +579,11 @@ End Bootstrap Docs
         padding-right: 0;
         padding-left: 4em;
     }
+
+    #eventsHorizontalContainer {display: none !important;}
+
+    #horizontalPromo {display: none !important;}
+
+
 
 }

@@ -123,7 +123,7 @@
                 url: "@(Url.Action("UpdateUserData","Home"))",
                 data: { userID: id, loginName: logName, password: logPass, firstName: fName, lastName: lName, phone: phone, email: email, userNotes: userNotes, roleID: role },
                 success: function (data) {
-                    $("#divUserListContainer").load("@(Url.Action("ManageUserPartial","Home", new { status ="update" }))");
+                    $("#divShowData").load("@(Url.Action("ManageUserPartial","Home", new { status ="update" }))");
                 },
                 error: function (error) {
                     
@@ -157,7 +157,7 @@
             url: "@(Url.Action("DeleteUser","Home"))",
             data: { userID: id },
         success: function (data) {
-            $("#divUserListContainer").load("@(Url.Action("ManageUserPartial","Home", new { status ="delete" }))");
+            $("#divShowData").load("@(Url.Action("ManageUserPartial","Home", new { status ="delete" }))");
         },
         error: function (error) { }
     });

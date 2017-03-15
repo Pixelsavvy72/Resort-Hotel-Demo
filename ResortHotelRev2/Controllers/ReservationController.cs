@@ -118,6 +118,8 @@ namespace ResortHotelRev2.Controllers
                     //TODO: All rooms on one reservation currently must have same dates. Think about adjusting this in future.
                     RoomResModel.CheckIn = RoomsSelectedList[0].CheckIn;
                     RoomResModel.CheckOut = RoomsSelectedList[0].CheckOut;
+
+                    
                 }
 
 
@@ -167,7 +169,6 @@ namespace ResortHotelRev2.Controllers
             List<RoomAndReservationModel> myReservations = reservationManager.GetMyReservations(userId);
 
 
-
             return View(myReservations);
         }
 
@@ -179,10 +180,10 @@ namespace ResortHotelRev2.Controllers
 
             return View(selectedReservation);
 
-            
+
         }
 
-        
+
         //Gets a list of selected rooms used in ActionResult VerifyReservationInfo.
         private static void GetSelectedRooms(RoomDataView model, List<RoomProfileView> RoomsSelectedList)
         {

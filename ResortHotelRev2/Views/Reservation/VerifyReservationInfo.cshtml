@@ -9,14 +9,10 @@
     
     <h2>Verify Reservation Information</h2>
 
-    
-
     @using (Html.BeginForm("PlaceReservation", "Reservation", FormMethod.Post))
     {
         
-
-
-        <input type="submit" name="PlaceReservation" value="Place This Reservation" class="btn btn-primary btn-lg" />
+                
         
         <div>
             <h4>ReservationView</h4>
@@ -104,7 +100,7 @@
                     
                     <thead>
                         <tr>
-                            <th></th>
+                            @*<th></th>*@
                             <th></th>
                             <th>Style</th>
                             <th>Occupancy</th>
@@ -122,7 +118,7 @@
 
                             <tr>
                                 @*TODO: Verify the picture works in live environment.*@
-                                <td><img src="~/Content/images/RoomPics/@Html.DisplayFor(r => r.RoomResRmProfile[i].Image)" width="175" height="120" /></td>
+                               @* <td><img src="~/Content/images/RoomPics/@Html.DisplayFor(r => r.RoomResRmProfile[i].Image)" width="175" height="120" /></td>*@
                                 <td>@Html.HiddenFor(r => r.RoomResRmProfile[i].RoomId)</td>
                                 <td>@Html.DisplayFor(r => r.RoomResRmProfile[i].RoomType)</td>
                                 <td>@Html.DisplayFor(r => r.RoomResRmProfile[i].Occupancy)</td>
@@ -142,12 +138,10 @@
     
     
         </div>
-    
+        <input type="submit" name="PlaceReservation" value="Place This Reservation" class="btn btn-primary btn-lg" />
     }
+    
 
-    <div>
-        @Html.ActionLink("Back to Main", "Index", "Home")
-    </div>  
 
 </div> 
 

@@ -41,65 +41,99 @@
 
         @*intro*@
         <p class="col-lg-12" style="padding-bottom: 1em;" id="introParagraph">Phasellus non consequat turpis. Donec a velit id ligula faucibus auctor. Nam at rhoncus sapien. Curabitur tincidunt hendrerit sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam in arcu quis risus imperdiet tincidunt.</p>
+        
+        <div class="container col-lg-12">
+            <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
+                <a href="@Url.Action("Accomodations", "Home")">
+                    <div class="indexBlocks col-md-6" style="background-color: cadetblue">
+                        <h2>Accomodations</h2>
+                        <img class="indexPic" id="accomodationsPic" src="~/Content/images/sm_roomInterior_sm_450x300.jpg" alt="Interior of hotel room" />
+                        <p class="col-md-6">Donec at ligula lobortis, semper velit in, pellentesque turpis. Nullam porttitor vestibulum est eget convallis.</p>
+                    </div>
+                </a>
+            </div>
 
-        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
-            <a href="@Url.Action("Accomodations", "Home")">
-                <div class="indexBlocks col-md-6" style="background-color: cadetblue">
-                    <h2>Accomodations</h2>
-                    <img class="indexPic" id="accomodationsPic" src="~/Content/images/sm_roomInterior_sm_450x300.jpg" alt="Interior of hotel room" />
-                    <p class="col-md-6">Donec at ligula lobortis, semper velit in, pellentesque turpis. Nullam porttitor vestibulum est eget convallis.</p>
+            <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
+                <a href="@Url.Action("Activities", "Home")">
+                    <div class="indexBlocks col-md-6" style="background-color: peru">
+                        <h2>Activities</h2>
+                        <img class="indexPic" id="activititesPic" src="~/Content/images/sm_skiier_450x300.jpg" alt="Woman skiing" />
+                        <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="container" id="eventsHorizontalContainer" style="display: none;">
+
+            <div class="container eventsContentBody col-sm-4" style="display: none">
+                <div>
+                    <h3>March 5th</h3>
+                    <p>Snippet from the news pages. Updated automatically when new content is added. A few lines should show before ...</p>
                 </div>
-            </a>
+            </div>
+            <div class="container eventsContentBody col-sm-4" style="display: none">
+                <div>
+                    <h3>March 7th</h3>
+                    <p>Snippet from the news pages. Updated automatically when new content is added. A few lines should show before ...</p>
+                </div>
+            </div>
+            <div class="container eventsContentBody col-sm-4" style="display: none">
+                <div>
+                    <h3>March 10th</h3>
+                    <p>Snippet from the news pages. Updated automatically when new content is added. A few lines should show before ...</p>
+                </div>
+            </div>
         </div>
         
-        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
-            <a href="@Url.Action("Activities", "Home")">
-                <div class="indexBlocks col-md-6" style="background-color: peru">
-                    <h2>Activities</h2>
-                    <img class="indexPic" id="activititesPic" src="~/Content/images/sm_skiier_450x300.jpg" alt="Woman skiing" />
-                    <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
-                </div>
-            </a>
+        <div class="container">
+            <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
+                <a href="@Url.Action("Shopping", "Home")">
+                    <div class="indexBlocks col-md-6" style="background-color: palevioletred">
+                        <h2>Shopping</h2>
+                        <img class="indexPic" id="offersPic" src="~/Content/images/sm_shop_450x300.jpg" alt="Open sign in door" />
+                        <p class="col-md-6">Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
+                <a href="@Url.Action("Offers", "Home")">
+                    <div class="indexBlocks col-md-6" style="background-color: goldenrod">
+                        <h2>Offers</h2>
+                        <img class="indexPic" id="offersPic" src="~/Content/images/sm_sparkler_sm_450x300.jpg" alt="Woman holding sparkler" />
+                        <p class="col-md-6">Donec mollis justo varius, commodo enim a, venenatis eros. Aenean quis nulla augue. Aenean tempus blandit tellus non hendrerit.</p>
+                    </div>
+                </a>
+            </div>
         </div>
 
-        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
-            <a href="@Url.Action("Shopping", "Home")">
-                <div class="indexBlocks col-md-6" style="background-color: palevioletred">
-                    <h2>Shopping</h2>
-                    <img class="indexPic" id="offersPic" src="~/Content/images/sm_shop_450x300.jpg" alt="Open sign in door" />
-                    <p class="col-md-6">Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
-                </div>
-            </a>
+        <div class="container" id="horizontalPromo" style="display: none;">
+            <img src="~/Content/images/skiJumpHorizontal.jpg" />
+            <h3>Offers &amp; Deals<br />Go Here</h3>
         </div>
 
-        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
-            <a href="@Url.Action("Offers", "Home")">
-                <div class="indexBlocks col-md-6" style="background-color: goldenrod">
-                    <h2>Offers</h2>
-                    <img class="indexPic" id="offersPic" src="~/Content/images/sm_sparkler_sm_450x300.jpg" alt="Woman holding sparkler" />
-                    <p class="col-md-6">Donec mollis justo varius, commodo enim a, venenatis eros. Aenean quis nulla augue. Aenean tempus blandit tellus non hendrerit.</p>
-                </div>
-            </a>
-        </div>
+        <div class="container">
 
-        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
-            <a href="@Url.Action("Restaurant", "Home")">
-                <div class="indexBlocks col-md-6" style="background-color: #b83d14">
-                    <h2>Food &amp; Dining</h2>
-                    <img class="indexPic" id="restaurantPic" src="~/Content/images/foodAndWine2.jpg" alt="Nice meal with wine." />
-                    <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
-                </div>
-            </a>
-        </div>
+            <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
+                <a href="@Url.Action("Restaurant", "Home")">
+                    <div class="indexBlocks col-md-6" style="background-color: #b83d14">
+                        <h2>Food &amp; Dining</h2>
+                        <img class="indexPic" id="restaurantPic" src="~/Content/images/foodAndWine2.jpg" alt="Nice meal with wine." />
+                        <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
+                    </div>
+                </a>
+            </div>
 
-        <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
-            <a href="@Url.Action("Access", "Home")">
-                <div class="indexBlocks col-md-6" style="background-color: #39ac39">
-                    <h2>Access</h2>
-                    <img class="indexPic" id="accessPic" src="~/Content/images/compassMap.jpg" alt="compass and map" />
-                    <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
-                </div>
-            </a>
+
+            <div class="container col-sm-6 col-lg-12 indexBlocksContainer">
+                <a href="@Url.Action("Access", "Home")">
+                    <div class="indexBlocks col-md-6" style="background-color: #39ac39">
+                        <h2>Access</h2>
+                        <img class="indexPic" id="accessPic" src="~/Content/images/compassMap.jpg" alt="compass and map" />
+                        <p class="col-md-6">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc facilisis pulvinar ex, placerat pretium leo consequat ac. Aenean laoreet fermentum sollicitudin.</p>
+                    </div>
+                </a>
+            </div>
         </div>
 
     

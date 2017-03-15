@@ -1,5 +1,6 @@
 ﻿using ResortHotelRev2.Models.DB;
 using ResortHotelRev2.Models.ViewModel;
+using ResortHotelRev2.Models.EntityManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,8 +53,9 @@ namespace ResortHotelRev2.Models.EntityManager
 
         public List<RoomAndReservationModel> GetMyReservations(int userId) 
         {
-
+            
             List<int> myReservationIds = new List<int>();
+            
             List<RoomAndReservationModel> myReservationsInfo = new List<RoomAndReservationModel>();
             ResortDBEntities db = new ResortDBEntities();
 
@@ -69,17 +71,30 @@ namespace ResortHotelRev2.Models.EntityManager
 
             foreach (var reservationId in myReservationIds)
             {
+                SYSReservationTable reservationTable = new SYSReservationTable();
                 RoomAndReservationModel roomResModel = new RoomAndReservationModel();
+                
+
                 var reservationTableProfile = db.SYSReservationTables.Find(reservationId);
+                var occupiedRoomTableProfile = db.SYSOccupiedRoomTables.Find(reservationId);
                 var userProfile = db.SYSUserProfiles.Find(userId);
+
+                List<int> myReservedRooms = new List<int>();
+
+
 
                 roomResModel.Id = reservationTableProfile.Id;
                 roomResModel.DatePlaced = reservationTableProfile.ReservationPlaced;
                 roomResModel.CheckIn = reservationTableProfile.DateIN;
                 roomResModel.CheckOut = reservationTableProfile.DateOUT;
-                //roomResModel.ReservationStatus = reservationTableProfile.Status;
+
+                RoomManager roomManager = new RoomManager();
+                roomResModel.RoomResRmProfile = roomManager.GetRoomsByReservation(reservationId);
+                
 
                 myReservationsInfo.Add(roomResModel);
+
+                
             }
 
             return myReservationsInfo;
@@ -89,6 +104,7 @@ namespace ResortHotelRev2.Models.EntityManager
         {
             ResortDBEntities db = new ResortDBEntities();
             RoomAndReservationModel selectedReservation = new RoomAndReservationModel();
+            RoomManager roomManager = new RoomManager();
                         
             var reservationTableProfile = db.SYSReservationTables.Find(resId);
             
@@ -105,6 +121,8 @@ namespace ResortHotelRev2.Models.EntityManager
             selectedReservation.FirstName = guestInfo.FirstName;
             selectedReservation.PhoneNumber = guestInfo.PhoneNumber;
             selectedReservation.Email = guestInfo.Email;
+
+            selectedReservation.RoomResRmProfile = roomManager.GetRoomsByReservation(resId);
 
 
             return selectedReservation;

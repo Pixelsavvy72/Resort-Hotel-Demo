@@ -1,5 +1,6 @@
 ﻿using ResortHotelRev2.Validation;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
@@ -31,6 +32,10 @@ namespace ResortHotelRev2.Models.ViewModel
         [DataType(DataType.Date)]
         public DateTime DatePlaced { get; set; }
 
+        //public IEnumerator GetEnumerator()
+        //{
+        //    return ((IEnumerable)RoomResRmProfile).GetEnumerator();
+        //}
     }
 
 

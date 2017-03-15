@@ -36,7 +36,49 @@ namespace ResortHotelRev2.Models.EntityManager
                 return allRooms;
             }
 
-        } 
+        }
+
+        public List<RoomProfileView> GetRoomsByReservation(int resId)
+        {
+            List<RoomProfileView> selectedRooms = new List<RoomProfileView>();
+            using (ResortDBEntities db = new ResortDBEntities())
+            {
+
+                foreach (var occupiedRoom in db.SYSOccupiedRoomTables)
+                {
+
+                    if (occupiedRoom.ReservationID == resId)
+                    {
+                        RoomProfileView RoomsList;
+
+                        foreach (SYSRoomsTable rm in db.SYSRoomsTables)
+                        {
+                            if (occupiedRoom.RoomID == rm.Id)
+                            {
+                                RoomsList = new RoomProfileView();
+                                RoomsList.RoomType = rm.RoomType;
+                                RoomsList.RoomId = rm.Id;
+                                RoomsList.Occupancy = rm.Occupancy;
+                                RoomsList.KingBeds = rm.NumberKingBeds;
+                                RoomsList.QueenBeds = rm.NumberQueenBeds;
+                                RoomsList.Smoking = rm.Smoking;
+                                RoomsList.RoomDescription = rm.Description;
+                                RoomsList.Image = rm.Image;
+
+                                selectedRooms.Add(RoomsList);
+                            }
+
+                        } //end foreach SysRooms
+                        
+                    } // end if occupiedRoom
+                    
+                } //end foreach occupiedRoom 
+
+                return selectedRooms;
+
+            }
+
+        }
 
         //Find which rooms are available for dates selected
         public RoomDataView GetRoomProfileView(DateTime startDate, DateTime endDate)

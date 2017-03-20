@@ -2,12 +2,12 @@
 
 This program is an in-progress hotel reservation system. It allows for the creation of guests and reservations, assigning rooms and guests to individual reservations, editing, and account management.
 
-**A video displaying functionality** is available at: https://youtu.be/b9LAkLaKdE4
+**A video displaying functionality** is available at: https://youtu.be/9rFQa7FNuLU
 - Video Timestamp Key:
 - 0:00 Account creation 
-- 1:38 Place a reservation
-- 3:52 Admin control panel demonstration
-- 7:17 Responsive design across multiple breakpoints for small phones, tablets, desktops, and large screen desktops.
+- 1:26 Place a reservation
+- 3:20 Admin control panel demonstration
+- 6:51 Responsive design across multiple breakpoints for small phones, tablets, desktops, and large screen desktops.
 
 Please note that this is primarily a functionality demo and I'll be fleshing out the design more soon.
 

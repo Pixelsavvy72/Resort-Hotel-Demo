@@ -19,6 +19,7 @@
                     <th>Check-In</th>
                     <th>Check-Out</th>
                     <th>Reservation<br />Status</th>
+                    <th></th>
                 </tr>
 
             </thead>
@@ -58,6 +59,7 @@
                         <td>@Html.DisplayFor(r => r[i].CheckIn)</td>
                         <td>@Html.DisplayFor(r => r[i].CheckOut)</td>
                         <td>@Html.DisplayFor(r => r[i].ReservationStatus)</td>
+                        <td><a href="javascript:void(0)" class="lnkCancel">Cancel Reservation</a></td>
                     </tr>
                 }
 
@@ -65,8 +67,7 @@
 
         </table>
 
-
-
-
     </div>
 </div>
+
+<span class="alert-success">@ViewBag.CancelMessage</span>

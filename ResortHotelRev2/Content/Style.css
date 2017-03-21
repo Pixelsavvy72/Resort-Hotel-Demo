@@ -7,6 +7,10 @@ body {
     background-color: #efe5da;
 }
 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #e6a182;
+}
+
 #body-content {
     /*height: 100vh;
     max-height: 100%;*/
@@ -22,6 +26,10 @@ body {
     text-decoration: none;
 }
 
+#innerContentContainer { 
+    padding-left: 0px;
+
+}
 
 .innerContent { padding: 20px 10px 0px 10px; }
 
@@ -89,10 +97,20 @@ body {
 #loginPage {
     background-color: rgba(0,0,0,0.0);
     margin: 10px;
-    font-weight: 600;   
+    font-weight: 600;
+}
+
+#loginPage #loginContent {
+    margin-top: 0px;
+    margin-bottom: -30px;
 }
 
 #loginPage > #largeNavbarBox { display: none; }
+
+#loginPage .backPanel {
+    padding: 1em 0em 0em 1em;
+    width: 60%;
+}
 
 
 #loginButton {
@@ -299,7 +317,7 @@ End Bootstrap Docs
     }
 
 
-    .innerContent { padding: 20px 30px 0px 10px; }
+    .innerContent { padding: 20px 10px 0px 10px; }
 
     .indexBlocksContainer {
         padding: 0;
@@ -376,7 +394,14 @@ End Bootstrap Docs
 
     #loginPage > .body-content { background-image: none; }
 
-    .innerContent { margin: auto; }
+    .innerContent { 
+        margin: 4em;
+        border: 10px solid #400000;
+        background-image: url('images/MiscImages/woodRepeatTextureRd.jpg');
+        border-radius: 25px;
+        
+        
+    }
 
     #hotelName {
         font-family: 'Tangerine', cursive;
@@ -403,10 +428,10 @@ End Bootstrap Docs
         display:unset;   
         background-color: rgba(0,0,0,0.7);
         width: 20%; 
-        max-width: 235px;       
+        width: 235px; 
+        margin-left: -200px;    
         position: fixed;
         top: 100px;
-        margin-left: -300px;
         float: left;
 
     }
@@ -417,6 +442,23 @@ End Bootstrap Docs
         text-align: center;
         font-family: 'Open Sans', sans-serif;
         font-size: 3em;
+
+    }
+
+
+    #largeNavbarMenuTextSmall {
+    
+    transform: rotate(-90deg);
+    position: relative;
+    float: right;
+    left: 25px;
+    top: -30px;
+    opacity: 0;
+    color: rgba(255,255,255,0.5);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    margin-top: -18px;
+    margin-bottom: -9px;
 
     }
 
@@ -444,16 +486,20 @@ End Bootstrap Docs
 /*INDEX PAGE BLOCK ITEMS*/
 
     .indexBlocksContainer {
+        height: auto;
+        margin-bottom: 50px;
         padding: 0;
-        align-items: center;        
+        align-items: center;
+        background-color: rgba(255,255,255,0.5);   
+        box-shadow: 10px 10px 10px rgba(0,0,0,0.5);  
+   
     }
 
     .indexBlocks {
         height: auto;
-        width: 400px;
-        margin-bottom: 50px;
+        width: 35%;
         padding-bottom: 3em;
-        box-shadow: 5px 5px rgba(0,0,0,.5)
+        /*box-shadow: 5px 5px rgba(0,0,0,.5)*/
 
        
     }
@@ -466,16 +512,18 @@ End Bootstrap Docs
 
     .indexBlocks h2 {
         font-family: 'Tangerine', cursive;
-        font-size: 6em;
+        font-size: 3.5em;
         color: white;
-        
-
     }
 
     .indexBlocksContainer p {
-        margin-top: 80px;
+        width: 65%;
         font-size: 1.5em;
         text-align: center;
+        padding-top: 2.5em;
+        padding-left: 3.5em;
+        padding-right: 3.5em;
+
     }
 
    
@@ -483,22 +531,29 @@ End Bootstrap Docs
 
     .indexBlocksContainer:nth-child(odd) p { float: left; }
 
-    .indexBlocksContainer:nth-child(even) .indexBlocks { float: right; }
+    .indexBlocksContainer:nth-child(even) .indexBlocks { 
+        float: right; 
+        border-left: 5px solid rgba(0,0,0,0.5); 
+    }
 
-    .indexBlocksContainer:nth-child(odd) .indexBlocks { float: left; }
+    .indexBlocksContainer:nth-child(odd) .indexBlocks {
+        float: left;
+        border-right: 5px solid rgba(0,0,0,0.5); 
+    }
+
+    #horizontalPromo { margin-top: 0; }
 
     /* ADMIN CONTROL PANEL */
 
 
     .backPanel {
+        background-image: url('images/MiscImages/woodRepeatTextureRd.jpg');
         margin-top: 3em;
         background-color: white;
         border-color: cadetblue;
         border-style: solid;
         border-radius: 30px;
-        padding: 2em;
-
-        
+        padding: 2em;        
     }
 
     #divShowData > .body-content { background-image: none; }
@@ -516,7 +571,6 @@ End Bootstrap Docs
 }
 
 
-
 /*Large Devices - 1200px Check this*/
 @media screen and (min-width: 1200px) {
 
@@ -527,11 +581,20 @@ End Bootstrap Docs
 
     #introParagraph { padding: 0 6em 0 6em; }
 
-    #overlookLogo { width: 15%; }
+    .indexBlocks h2 { font-size: 4em; }
+   
+
+
+
+    #overlookLogo { 
+        width: 15%;
+        margin-left: -2em;
+    }
 
     .sidebar {
         display: unset !important;
         margin-top: 2em;
+        margin-left: -2em;
        
     }
 
@@ -541,7 +604,7 @@ End Bootstrap Docs
         padding: 1em;
         color: black;
         background-image: url('images/MiscImages/woodRepeatTextureRd.jpg');
-        border: 7px solid #400000;
+        border: 7px solid  #400000;
         border-radius: 15px;
         box-shadow: 7px 7px 10px rgba(0,0,0,0.7);
     }
@@ -578,6 +641,10 @@ End Bootstrap Docs
     .backPanel {
         padding-right: 0;
         padding-left: 4em;
+    }
+
+    #usersTable {
+    margin-left: -2em;
     }
 
     #eventsHorizontalContainer {display: none !important;}

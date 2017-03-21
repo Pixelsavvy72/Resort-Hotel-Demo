@@ -29,9 +29,10 @@ $(window).resize(function () {
     // Return to original settings on window size reduction
     else {
         $('.indexBlocksContainer').addClass('col-sm-6').removeClass('col-lg-1');
-        $('.indexBlocksContainer').each(function (index) {
-            $(this).children('p').appendTo($(this).children('.indexBlocks'));
-        });
+        //TODO: Get this working
+        //$('.indexBlocksPara').each(function (index) {
+        //    $(this).prev('.indexBlocks').append($(this).html());
+        //});
         $('#secondaryNavbar').addClass('navbar-fixed-bottom');
         $('#myAcctText').hide();
     }
@@ -42,41 +43,66 @@ $(window).resize(function () {
 $(window).on("load", function () {
     // CAROUSEL
 
-        $('.mySlickCarousel').slick({
-            autoplay: true,
-            pauseOnFocus: false,
-            pauseOnHover: false,
-            dots: false,
-            arrows: false,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            cssEase: 'linear'
-        });
+    $('.mySlickCarousel').slick({
+        autoplay: true,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+    });
     
-
-
+// SECONDARY NAVIGATION on M,L,XL
+    if ($("#js-homepage-flag").length > 0)
+    {
         $('#largeNavbarBox').animate({
-        marginLeft: "0px"
-    }, 1500);
+            marginLeft: "0px"
+        }, 1500).delay(1500).animate({
+            marginLeft: "-200px"
+        }, 500);
+
+        $('#largeNavbarMenuTextSmall').delay(3000).removeAttr('style').animate({
+            opacity: 1
+        }, 700);
+    }
+
+    else {
+        $('#largeNavbarMenuTextSmall').removeAttr('style').animate({
+            opacity: 1
+        }, 700);
+    }
+
         
 
-    // SECONDARY NAVIGATION on M,L,XL
     $('#largeNavbarBox').mouseenter(function () {
-        $(this).animate({
+        $(this).stop(true,true).animate({
+            marginLeft: "0px",
             height: "auto",
         }, 300);
         
         $('.largeNavbarItems').each(function (index) {
-            $(this).delay(300 * (index)).removeAttr('style').animate({
+            $(this).stop(true, true).delay(300 * (index)).removeAttr('style').animate({
                 opacity: 1
             }, 700);
-        });    
+        });
+
+        $('#largeNavbarMenuTextSmall').stop(true,true).animate({
+            opacity: 0
+        }, 0);
 
     }); //end mouseenter 
 
     $('#largeNavbarBox').mouseleave(function () {
         $('.largeNavbarItems').attr('style', 'display: none');
+        $('#largeNavbarBox').stop(true,true).animate({
+            marginLeft: "-200px"
+        }, 500),
+        $('#largeNavbarMenuTextSmall').animate({
+            opacity: 1
+        }, 700);
 
     }); // end mouseleave 
 

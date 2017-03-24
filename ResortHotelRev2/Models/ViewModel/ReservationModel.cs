@@ -41,11 +41,11 @@ namespace ResortHotelRev2.Models.ViewModel
 
     public enum ReservationStatus
     {
-        Confirmed,
-        Canceled,
+        Confirmed = 0,
+        Canceled = 1,
         [Display(Name = "In Progress")]
-        InProgress,
-        Completed
+        InProgress = 2,
+        Completed = 3
     }
 
 

@@ -57,7 +57,7 @@ namespace ResortHotelRev2.Controllers
                 else if (status.Equals("delete"))
                     message = "Delete Successful";
 
-                ViewBag.Message = message;
+                ViewBag.CancelMessage = message;
 
                 if (name != string.Empty)
                 {
@@ -145,7 +145,6 @@ namespace ResortHotelRev2.Controllers
 
             return View(profile);
         }//END EDIT PROFILE
-
 
         //STATIC HTML PAGES FOLLOW
 

@@ -56,6 +56,7 @@
           <Property Name="MadeBy" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="ReservedByUserId" Type="int" />
           <Property Name="ReservationPlaced" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="StatusEnum" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="SYSRoomReservedTable">
           <Key>
@@ -436,6 +437,7 @@
           <NavigationProperty Name="SYSGuestToRoomTables" Relationship="ResortDBModel.FK__SYSGuestT__Reser__2EA5EC27" FromRole="SYSReservationTable" ToRole="SYSGuestToRoomTable" />
           <NavigationProperty Name="SYSOccupiedRoomTables" Relationship="ResortDBModel.FK__SYSOccupi__Reser__503BEA1C" FromRole="SYSReservationTable" ToRole="SYSOccupiedRoomTable" />
           <NavigationProperty Name="SYSRoomReservedTables" Relationship="ResortDBModel.FK__SYSRoomRe__Reser__3C34F16F" FromRole="SYSReservationTable" ToRole="SYSRoomReservedTable" />
+          <Property Name="StatusEnum" Type="Byte" Nullable="false" />
         </EntityType>
         <Association Name="FK__SYSGuestT__Reser__2EA5EC27">
           <End Type="ResortDBModel.SYSReservationTable" Role="SYSReservationTable" Multiplicity="1" />
@@ -596,6 +598,7 @@
           <EntitySetMapping Name="SYSReservationTables">
             <EntityTypeMapping TypeName="ResortDBModel.SYSReservationTable">
               <MappingFragment StoreEntitySet="SYSReservationTable">
+                <ScalarProperty Name="StatusEnum" ColumnName="StatusEnum" />
                 <ScalarProperty Name="ReservationPlaced" ColumnName="ReservationPlaced" />
                 <ScalarProperty Name="ReservedByUserId" ColumnName="ReservedByUserId" />
                 <ScalarProperty Name="MadeBy" ColumnName="MadeBy" />

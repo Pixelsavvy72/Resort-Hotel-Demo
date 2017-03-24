@@ -1,5 +1,6 @@
 ﻿using ResortHotelRev2.Models.EntityManager;
 using ResortHotelRev2.Models.ViewModel;
+using ResortHotelRev2.Security;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -198,5 +199,18 @@ namespace ResortHotelRev2.Controllers
 
             }
         }
+
+        //CANCEL RESERVATION
+        //[AuthorizeRoles("Admin,Member")]
+        public ActionResult CancelReservation(int resID, string status)
+        {
+            ReservationManager resManager = new ReservationManager();
+            resManager.CancelReservation(resID);
+
+            return Json(new { success = true });
+
+
+        }
+
     }
 }

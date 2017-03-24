@@ -68,6 +68,35 @@
         </table>
 
     </div>
+    <div id="divShowData"></div>
 </div>
 
 <span class="alert-success">@ViewBag.CancelMessage</span>
+
+
+@* TODO: Get status label working and stop reloading of page. *@
+<script type="text/javascript">
+    function CancelReservation(id) {
+        $.ajax({
+            type: "POST",
+            url: "@(Url.Action("CancelReservation", "Reservation"))",
+            data: { resID: id },
+            success: function (data) {
+                $("body").load("@(Url.Action("ViewMyReservations","Reservation"))");
+                },
+            error: function (error) {}
+        });
+    }
+
+    $("a.lnkCancel").on("click", function () {
+        var row = $(this).closest('tr');
+        var id = row.find("td:eq(0)").html().trim();
+        var answer = confirm("Are you sure you would like to cancel reservation #" + id + "?");
+        if (answer)
+            CancelReservation(id);
+        return false;
+    });
+
+
+
+</script>

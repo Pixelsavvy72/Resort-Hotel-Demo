@@ -51,6 +51,7 @@
     <Property Name="MadeBy" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="ReservedByUserId" Type="int" />
     <Property Name="ReservationPlaced" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="StatusEnum" Type="tinyint" Nullable="false" />
   </EntityType>
   <EntityType Name="SYSRoomReservedTable">
     <Key>

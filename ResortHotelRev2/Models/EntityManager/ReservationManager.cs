@@ -87,6 +87,7 @@ namespace ResortHotelRev2.Models.EntityManager
                 roomResModel.DatePlaced = reservationTableProfile.ReservationPlaced;
                 roomResModel.CheckIn = reservationTableProfile.DateIN;
                 roomResModel.CheckOut = reservationTableProfile.DateOUT;
+                roomResModel.ReservationStatus = (ReservationStatus)reservationTableProfile.StatusEnum;
 
                 RoomManager roomManager = new RoomManager();
                 roomResModel.RoomResRmProfile = roomManager.GetRoomsByReservation(reservationId);
@@ -126,6 +127,42 @@ namespace ResortHotelRev2.Models.EntityManager
 
 
             return selectedReservation;
+        } //END FindReservationById
+
+        //TODO: Free canceled rooms from reserved status for that time period
+        
+        public void CancelReservation(int resID)
+        {
+            ResortDBEntities db = new ResortDBEntities();
+            {
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        SYSReservationTable thisReservation = db.SYSReservationTables.Find(resID);
+                        thisReservation.Status = "Canceled";
+                        thisReservation.StatusEnum = 1;
+
+                        SYSOccupiedRoomTable occupiedRooms = new SYSOccupiedRoomTable();
+                        var query = db.SYSOccupiedRoomTables.AsEnumerable().Where(i => i.ReservationID == resID);
+                        foreach (var item in query)
+                        {
+                            db.SYSOccupiedRoomTables.Remove(item);
+                        }
+
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+
+                    
+                }
+
+            }
+
         }
 
         

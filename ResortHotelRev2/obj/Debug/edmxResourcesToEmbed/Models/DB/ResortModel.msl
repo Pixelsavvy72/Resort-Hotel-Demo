@@ -118,6 +118,7 @@
     <EntitySetMapping Name="SYSReservationTables">
       <EntityTypeMapping TypeName="ResortDBModel.SYSReservationTable">
         <MappingFragment StoreEntitySet="SYSReservationTable">
+          <ScalarProperty Name="StatusEnum" ColumnName="StatusEnum" />
           <ScalarProperty Name="ReservationPlaced" ColumnName="ReservationPlaced" />
           <ScalarProperty Name="ReservedByUserId" ColumnName="ReservedByUserId" />
           <ScalarProperty Name="MadeBy" ColumnName="MadeBy" />

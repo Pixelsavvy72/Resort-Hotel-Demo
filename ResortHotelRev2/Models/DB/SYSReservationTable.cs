@@ -11,8 +11,7 @@ namespace ResortHotelRev2.Models.DB
 {
     using System;
     using System.Collections.Generic;
-    using ViewModel;
-
+    
     public partial class SYSReservationTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -30,6 +29,7 @@ namespace ResortHotelRev2.Models.DB
         public string MadeBy { get; set; }
         public Nullable<int> ReservedByUserId { get; set; }
         public System.DateTime ReservationPlaced { get; set; }
+        public byte StatusEnum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SYSGuestToRoomTable> SYSGuestToRoomTables { get; set; }

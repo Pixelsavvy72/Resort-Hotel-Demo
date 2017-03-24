@@ -32,10 +32,6 @@ namespace ResortHotelRev2.Models.ViewModel
         [DataType(DataType.Date)]
         public DateTime DatePlaced { get; set; }
 
-        //public IEnumerator GetEnumerator()
-        //{
-        //    return ((IEnumerable)RoomResRmProfile).GetEnumerator();
-        //}
     }
 
 

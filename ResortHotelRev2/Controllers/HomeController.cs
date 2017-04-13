@@ -8,7 +8,7 @@ using System.Web.Security;
 using ResortHotelRev2.Models.ViewModel;
 using ResortHotelRev2.Models.EntityManager;
 
-//TODO: Add password verification field during sign-up.
+
 //TODO: Add reset password funtionality.
 //TODO: Before going live, remove password from list of users returned by ManageUserPartial. Now, good for testing.
 //TODO: Format phone numbers throughout based on country of residence

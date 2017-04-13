@@ -59,7 +59,7 @@ namespace ResortHotelRev2.Models.EntityManager
             List<RoomAndReservationModel> myReservationsInfo = new List<RoomAndReservationModel>();
             ResortDBEntities db = new ResortDBEntities();
 
-            //Refactor Get all reservation Ids
+            
             foreach (var reservation in db.SYSReservationTables)
             {
                 if (reservation.ReservedByUserId == userId)
@@ -128,9 +128,7 @@ namespace ResortHotelRev2.Models.EntityManager
 
             return selectedReservation;
         } //END FindReservationById
-
-        //TODO: Free canceled rooms from reserved status for that time period
-        
+                
         public void CancelReservation(int resID)
         {
             ResortDBEntities db = new ResortDBEntities();
@@ -163,8 +161,8 @@ namespace ResortHotelRev2.Models.EntityManager
 
             }
 
-        }
+        } // end CancelReservation
 
         
-    }
-}
+    } // end ReservationManager Class
+} // end namespace

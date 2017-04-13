@@ -36,7 +36,7 @@ namespace ResortHotelRev2.Models.EntityManager
                 return allRooms;
             }
 
-        }
+        } // end GetAllRooms
 
         public List<RoomProfileView> GetRoomsByReservation(int resId)
         {
@@ -76,9 +76,9 @@ namespace ResortHotelRev2.Models.EntityManager
 
                 return selectedRooms;
 
-            }
+            } // end using db
 
-        }
+        } // end GetRoomsByReservation
 
         //Find which rooms are available for dates selected
         public RoomDataView GetRoomProfileView(DateTime startDate, DateTime endDate)
@@ -129,10 +129,10 @@ namespace ResortHotelRev2.Models.EntityManager
                         }                        
                     }
                 }
-            }
+            } // end using db
 
             RoomDataView.RoomProfile = availableRooms;
             return RoomDataView;
-        }
-    }
-}
+        } // end GetRoomProfileView
+    } // end RoomManager class
+}// end namespace

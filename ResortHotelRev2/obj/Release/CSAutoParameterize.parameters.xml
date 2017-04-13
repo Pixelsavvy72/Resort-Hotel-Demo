@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="ResortDBEntities-Web.config Connection String" description="ResortDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.DB.ResortModel.csdl|res://*/Models.DB.ResortModel.ssdl|res://*/Models.DB.ResortModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\ResortDB.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\Craig\\Craigs\ Libraries\\OneDrive\\Programming\\Visual\ Studio\ 2015\\Projects\\ResortHotel\\ResortHotelRev2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ResortDBEntities']/@connectionString" />
-  </parameter>
-</parameters>

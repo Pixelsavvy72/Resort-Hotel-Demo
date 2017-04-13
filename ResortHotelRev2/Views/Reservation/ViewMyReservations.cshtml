@@ -1,5 +1,4 @@
-﻿
-@model IList<ResortHotelRev2.Models.ViewModel.RoomAndReservationModel>
+﻿@model IList<ResortHotelRev2.Models.ViewModel.RoomAndReservationModel>
 
 @{
     ViewBag.Title = "ViewMyReservations";
@@ -91,6 +90,9 @@
     $("a.lnkCancel").on("click", function () {
         var row = $(this).closest('tr');
         var id = row.find("td:eq(0)").html().trim();
+
+        //TODO: if checkin date < dateNOW, user must contact front desk by phone.
+
         var answer = confirm("Are you sure you would like to cancel reservation #" + id + "?");
         if (answer)
             CancelReservation(id);

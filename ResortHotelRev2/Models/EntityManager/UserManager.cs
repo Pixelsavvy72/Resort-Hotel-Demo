@@ -55,7 +55,7 @@ namespace ResortHotelRev2.Models.EntityManager
                 
 
             }
-        }
+        } // end AddUserAccount
 
         public bool IsLoginNameExist(string loginName)
         {
@@ -63,7 +63,7 @@ namespace ResortHotelRev2.Models.EntityManager
             {
                 return db.SYSUsers.Where(o => o.LoginName.Equals(loginName)).Any();
             }
-        }
+        } // end IsLoginNameExist
 
         public string GetUserPassword(string loginName)
         {
@@ -75,7 +75,7 @@ namespace ResortHotelRev2.Models.EntityManager
                 else
                     return string.Empty;
             }
-        }
+        }  // end GetUserPassword
 
         public bool IsUserInRole(string loginName, string roleName)
         {
@@ -97,7 +97,7 @@ namespace ResortHotelRev2.Models.EntityManager
 
                 return false;
             }
-        }
+        } // end IsUserInRole
 
         public List<LOOKUPAvailableRole> GetAllRoles()
         {
@@ -112,7 +112,7 @@ namespace ResortHotelRev2.Models.EntityManager
 
                 return roles;
             }
-        }
+        } // end GetAllRoles
 
         public int GetUserID(string loginName)
         {
@@ -123,7 +123,7 @@ namespace ResortHotelRev2.Models.EntityManager
                     return user.FirstOrDefault().SYSUserID;
             }
             return 0;
-        }
+        } // end GetUserId
         public List<UserProfileView> GetAllUserProfiles()
         {
             List<UserProfileView> profiles = new List<UserProfileView>();
@@ -163,7 +163,7 @@ namespace ResortHotelRev2.Models.EntityManager
             }
 
             return profiles;
-        }
+        } // end GetAllUserProfiles
 
         public UserDataView GetUserDataView(string loginName)
         {
@@ -183,7 +183,9 @@ namespace ResortHotelRev2.Models.EntityManager
             userDataView.UserProfile = profiles;
             userDataView.UserRoles = new UserRoles { SelectedRoleID = userAssignedRoleID, UserRoleList = roles };
             return userDataView;
-        }
+        } // end GetUserDataView
+
+
         public UserProfileView GetUserProfile(int userID)
         {
             UserProfileView userProfileView = new UserProfileView();
@@ -216,7 +218,7 @@ namespace ResortHotelRev2.Models.EntityManager
                 }
             }
             return userProfileView;
-        }
+        } // end GetUserProfile
 
         public void UpdateUserAccount(UserProfileView user)
         {
@@ -294,7 +296,7 @@ namespace ResortHotelRev2.Models.EntityManager
                     }
                 }
             }
-        }
+        } // end UpdateUserAccount
 
         public void DeleteUser(int userID)
         {
@@ -334,9 +336,9 @@ namespace ResortHotelRev2.Models.EntityManager
                     }
                 }
             }
-        }
+        } // end DeleteUser
 
-    }
+    } //end UserManager class
 
 
-}
+} // end namespace

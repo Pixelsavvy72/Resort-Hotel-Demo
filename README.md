@@ -2,9 +2,6 @@
 
 This program is an in-progress hotel reservation system. It allows for the creation of guests and reservations, assigning rooms and guests to individual reservations, editing, and account management.
 
-[![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=9rFQa7FNuLU)
-
-
 **A video displaying functionality** is available at: https://youtu.be/9rFQa7FNuLU
 - Video Timestamp Key:
 - 0:00 Account creation 

@@ -27,6 +27,7 @@ Please note that this is primarily a functionality demo and I'll be fleshing out
 - Persist reservation and related data to various database tables (see below).
 - Reservation is assigned to User. User created reservations are assigned to that user. Admin created reservations are assigned to selected guest Id.
 - Rooms are made unavailable for those dates.
+- User or Admin has ability to cancel reservations. Canceled reservations return rooms to available status for those dates.
 
 ## Backend To-Dos:
 
@@ -37,7 +38,7 @@ Please note that this is primarily a functionality demo and I'll be fleshing out
 - [x] Add password confirmation field during sign-up.
 - [ ] Add reset password functionality.
 - [ ] Allow users to delete their own account.
-- [ ] Allow for cancellation of part of a reservation (ex: 1 room of a 3 room reservation)
+- [ ] Allow for cancelation of part of a reservation (ex: 1 room of a 3 room reservation)
 - [x] Finish Admin Control Panel – ~~Create New User~~ (Done), ~~Search for Reservation~~ (Done), ~~Add Reservation~~ (Done), 
 - [ ] Format phone numbers throughout based on user’s country of residence
 - [ ] Add more validation and try-catch throughout.
@@ -47,9 +48,9 @@ Please note that this is primarily a functionality demo and I'll be fleshing out
 - [ ] Implement tables not yet implemented.
 
 ## Frontend To-Dos:
-- [ ] Design large size homepage
+- [x] Design large size homepage
 - [ ] Think about Ajaxifying the login-dropdown.
-- [ ] Add special notifications to large size pages. Sidebar? Drop-in?
+- [x] Add special notifications to large size pages. Sidebar? Drop-in?
 - [ ] Choose better fonts
 - [x] Choose better colors for indexBlocks.
 - [ ] Design secondary pages
@@ -70,4 +71,4 @@ Please note that this is primarily a functionality demo and I'll be fleshing out
 
 ## Notes
 
-Hat-tip to user Vincent Durano for his information and examples on account creation.
+Hat-tip to user Vincent Durano for his information and examples on user account creation.

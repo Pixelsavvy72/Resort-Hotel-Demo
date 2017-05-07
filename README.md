@@ -4,7 +4,7 @@ This program is an in-progress hotel reservation system. It allows for the creat
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=9rFQa7FNuLU
 " target="_blank"><img src="https://github.com/Stormseye72/Resort-Hotel-Demo/raw/master/ResortHotelScreenshot01.png" 
-alt="Link to demo video on youtube." width="600" height="450" style="border:10px solid black" /></a>
+alt="Link to demo video on youtube." width="600" style="border:10px solid black" /></a>
 
 **A video displaying functionality** is available at: https://youtu.be/9rFQa7FNuLU
 - Video Timestamp Key:
